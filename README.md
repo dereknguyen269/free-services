@@ -1,201 +1,354 @@
-# free-services
+# 🚀 Free Services for Developers
 
-## 🚀 Free Hosting Services for Developers
+A comprehensive, curated guide to the best **free-forever** and **generous free-tier** services for building, deploying, and scaling applications in 2026.
 
-| Service                  | Free Tier               | Docker | Sleep / Scale-to-Zero | Database   | ⭐ Pros                                    | ⚠️ Cons                      | Best For                     |
-| ------------------------ | ----------------------- | :----: | :-------------------: | ---------- | ----------------------------------------- | ---------------------------- | ---------------------------- |
-| **Render**               | ✅ 750 hrs/mo            |    ✅   |         😴 Yes        | PostgreSQL | Very easy setup, Git deploy, Docker       | Cold starts, limited free DB | **General SaaS**             |
-| **Koyeb**                | ✅ 1 service             |    ✅   |         😴 Yes        | ❌          | 512 MB RAM, 2 GB SSD, easy deployment     | Free resources are limited   | **APIs / Backend**           |
-| **Railway**              | ⚠️ $1 credit/mo         |    ✅   |           ❌           | PostgreSQL | ⭐ Excellent DX, very easy deployment      | Not truly free forever       | **Startups**                 |
-| **Google Cloud Run**     | ✅ Free quota            |    ✅   |         ⚡ Yes         | ❌          | Docker-native, autoscaling, scale-to-zero | GCP setup can be complex     | **Container apps**           |
-| **Cloudflare Workers**   | ✅                       |   ⚠️   |           ❌           | D1 / KV    | Extremely fast, global edge network       | Different runtime model      | **APIs / Edge apps**         |
-| **Cloudflare Pages**     | ✅                       |   ⚠️   |           ❌           | D1 / KV    | Free CDN, Git deployment                  | Backend limitations          | **Frontend**                 |
-| **Vercel**               | ✅                       |   ⚠️   |         ⚡ Yes         | ❌          | ⭐ Best for Next.js, CDN, previews         | Serverless limitations       | **Next.js**                  |
-| **Netlify**              | ✅                       |   ⚠️   |         ⚡ Yes         | ❌          | Easy deployment, Functions                | Backend limitations          | **Frontend / JAMstack**      |
-| **Northflank**           | ✅                       |    ✅   |           ❌           | PostgreSQL | Kubernetes-based, Docker-native           | More complex                 | **Docker / DevOps**          |
-| **Zeabur**               | ⚠️ Limited              |    ✅   |         Varies        | PostgreSQL | Very easy Docker deployment               | Free quota limited           | **Side projects**            |
-| **Azure Container Apps** | ✅ Free quota            |    ✅   |         ⚡ Yes         | ❌          | Serverless containers, autoscaling        | Azure complexity             | **Container APIs**           |
-| **Oracle Cloud**         | ✅ Always Free resources |    ✅   |           ❌           | ✅          | Powerful free VM resources                | Difficult setup              | **Self-hosting**             |
-| **AWS Lambda**           | ✅ Free quota            |    ✅   |         ⚡ Yes         | DynamoDB   | Serverless, huge ecosystem                | Execution limits             | **Serverless APIs**          |
-| **AWS Amplify**          | ✅ Free quota            |   ⚠️   |         ⚡ Yes         | DynamoDB   | Full AWS integration                      | AWS complexity               | **Full-stack apps**          |
-| **Firebase Hosting**     | ✅                       |    ❌   |           —           | Firebase   | Easy frontend + backend ecosystem         | Vendor lock-in               | **Web/mobile apps**          |
-| **GitHub Pages**         | ✅                       |    ❌   |           —           | ❌          | Completely free, extremely simple         | Static only                  | **Documentation / websites** |
+---
 
+## 📑 Quick Navigation
 
-## 🗄️ Free Database Hosting — 2026
+| Category | Services |
+|----------|----------|
+| 🏠 **Hosting** | Web apps, containers, serverless |
+| 💾 **Databases** | PostgreSQL, MongoDB, Redis, SQLite |
+| 📧 **Email** | Transactional & marketing |
+| 🐛 **Monitoring** | Errors, performance, logs, APM |
+| 🤖 **AI/LLM** | APIs & chat interfaces |
+| 📊 **Analytics** | User tracking & product insights |
+| 📣 **Marketing** | Email, SEO, forms, content, automation |
 
-| Service                    | Database                   |   Free storage / quota | ⭐ Pros                                                                   | ⚠️ Cons                                            | Best for                 |
-| -------------------------- | -------------------------- | ---------------------: | ------------------------------------------------------------------------ | -------------------------------------------------- | ------------------------ |
-| **Supabase**               | PostgreSQL                 |     **500 MB/project** | ⭐ PostgreSQL + Auth + Storage + Realtime<br>⭐ Very easy<br>⭐ Great API   | Projects pause after inactivity<br>500 MB DB       | 🏆 Full-stack SaaS       |
-| **Neon**                   | PostgreSQL                 |    **~500 MB/project** | ⭐ Serverless<br>⭐ Scale-to-zero<br>⭐ Branching<br>⭐ Excellent for Vercel | Compute/storage limits                             | 🏆 Next.js / serverless  |
-| **Aiven**                  | PostgreSQL / MySQL / Redis |               **1 GB** | ⭐ Real managed DB<br>⭐ PostgreSQL + MySQL + Redis<br>⭐ No credit card    | Single node<br>Can power off after inactivity      | 🏆 Traditional backend   |
-| **CockroachDB**            | Distributed SQL            |             **10 GiB** | ⭐ Very generous storage<br>⭐ PostgreSQL-compatible<br>⭐ Distributed      | More complexity than Postgres                      | 🌎 Distributed apps      |
-| **Turso**                  | SQLite / libSQL            |               **5 GB** | ⭐ Edge database<br>⭐ Extremely fast globally<br>⭐ Great free quota       | SQLite limitations                                 | 🌎 Edge apps             |
-| **Cloudflare D1**          | SQLite                     |               **5 GB** | ⭐ Excellent with Workers<br>⭐ Edge deployment<br>⭐ 5M reads/day          | Mainly Cloudflare ecosystem                        | ⚡ Cloudflare apps        |
-| **MongoDB Atlas**          | MongoDB                    |             **512 MB** | ⭐ Free forever<br>⭐ Excellent MongoDB platform<br>⭐ Easy setup           | Only 512 MB<br>Shared resources                    | 📄 NoSQL apps            |
-| **Firebase Firestore**     | NoSQL                      |              **1 GiB** | ⭐ Realtime<br>⭐ Mobile/web SDKs<br>⭐ Authentication ecosystem            | Read/write quotas<br>Can become expensive at scale | 📱 Mobile / realtime     |
-| **Firebase Realtime DB**   | NoSQL                      |               **1 GB** | ⭐ Realtime sync<br>⭐ Very easy                                           | Less flexible querying                             | 💬 Realtime apps         |
-| **Upstash**                | Redis                      |             **256 MB** | ⭐ Serverless Redis<br>⭐ HTTP API<br>⭐ Excellent for caching              | 500K commands/month                                | ⚡ Cache / sessions       |
-| **Prisma Postgres**        | PostgreSQL                 |             **500 MB** | ⭐ Excellent Prisma integration<br>⭐ Easy for TypeScript                  | Usage limits                                       | 🟦 TypeScript apps       |
-| **Nile**                   | PostgreSQL                 |               **1 GB** | ⭐ Multi-tenant Postgres<br>⭐ Designed for SaaS                           | Smaller ecosystem                                  | 🏢 Multi-tenant SaaS     |
-| **Convex**                 | Document DB                |            **~0.5 GB** | ⭐ Realtime by default<br>⭐ Functions + DB together                       | Not traditional SQL                                | 🔄 Realtime apps         |
-| **Oracle Cloud**           | MySQL / PostgreSQL etc.    | Always-free resources* | ⭐ Powerful infrastructure<br>⭐ ARM VM + database possibilities           | Setup is considerably harder                       | 🛠️ Advanced users       |
-| **AWS DynamoDB**           | NoSQL                      | **25 GB Always Free**† | ⭐ Huge free storage<br>⭐ Serverless<br>⭐ Highly scalable                 | NoSQL data model                                   | 🚀 High-scale serverless |
-| **Google Cloud Firestore** | NoSQL                      |              **1 GiB** | ⭐ Good SDKs<br>⭐ Realtime capabilities                                   | Daily operation limits                             | 📱 Web/mobile            |
-| **Google Cloud SQL**       | PostgreSQL / MySQL         |          Trial credits | ⭐ Full managed PostgreSQL/MySQL                                          | Not permanently free                               | 🧪 Testing / migration   |
+---
 
+## 🏠 Hosting & Deployment
 
-## Free Email services
+### Frontend Hosting
 
-| Service        |                    Free tier* | ⭐ Pros                                                                                               | ⚠️ Cons                                                                             | Best for                        |
-| -------------- | ----------------------------: | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------- |
-| **Resend**     |           **3,000 emails/mo** | ⭐ Excellent DX<br>⭐ Simple API<br>⭐ React Email integration<br>⭐ Very easy DNS setup                 | ⚠️ 100/day limit<br>⚠️ Smaller free quota                                           | **Modern SaaS / Next.js**       |
-| **Brevo**      |            **300 emails/day** | ⭐ Large free allowance<br>⭐ SMTP + API<br>⭐ Marketing + transactional email<br>⭐ Good dashboard      | ⚠️ API/DX less developer-focused<br>⚠️ Branding/limits on free plan                 | **Startups & small businesses** |
-| **Mailtrap**   |           **4,000 emails/mo** | ⭐ Excellent testing tools<br>⭐ Developer-friendly API<br>⭐ Email sandbox<br>⭐ Good debugging         | ⚠️ Free production quota limited<br>⚠️ More complex than Resend                     | **Developers & testing**        |
-| **Mailgun**    |         **Limited free tier** | ⭐ Mature platform<br>⭐ Powerful API<br>⭐ Good deliverability tools<br>⭐ Webhooks & analytics         | ⚠️ Free tier relatively small<br>⚠️ More setup/configuration                        | **Production SaaS**             |
-| **MailerSend** |             **500 emails/mo** | ⭐ Simple API<br>⭐ Templates<br>⭐ SMTP support<br>⭐ Good UI                                           | ⚠️ Very small free quota<br>⚠️ Less attractive at scale                             | **Small projects**              |
-| **Postmark**   |             **100 emails/mo** | ⭐ Excellent deliverability<br>⭐ Very reliable<br>⭐ Great transactional focus<br>⭐ Easy API           | ⚠️ Tiny free allowance<br>⚠️ Mainly transactional email                             | **Critical emails**             |
-| **Amazon SES** | **Very low cost / AWS-based** | ⭐ Extremely cheap at scale<br>⭐ Highly scalable<br>⭐ AWS integration<br>⭐ Excellent for large volume | ⚠️ Setup is more complicated<br>⚠️ Sandbox initially<br>⚠️ DX not as nice as Resend | **High-volume SaaS**            |
+| Service | Free Tier | Best For | Key Feature |
+|---------|-----------|----------|------------|
+| **GitHub Pages** | ✅ Unlimited | Documentation, static sites | Git-native, no setup |
+| **Vercel** | ✅ Hobby | Next.js, React | Edge network, serverless |
+| **Netlify** | ✅ Free | Static + functions | Git deploy, forms |
+| **Cloudflare Pages** | ✅ Unlimited | Speed-focused | Global CDN, D1 database |
 
-## 🐛 Error + Performance Tracking
+### Backend & Full-Stack Hosting
 
-| Service                    |                      Free tier | Error tracking | Performance / APM |   Logs  | ⭐ Pros                                                                               | ⚠️ Cons                                  |
-| -------------------------- | -----------------------------: | :------------: | :---------------: | :-----: | ------------------------------------------------------------------------------------ | ---------------------------------------- |
-| **Sentry**                 |               **5K errors/mo** |        ✅       |         ✅         | Limited | ⭐ Industry standard<br>⭐ Excellent stack traces<br>⭐ Session replay<br>⭐ Great SDKs  | Free quota can disappear quickly         |
-| **GlitchTip**              | **Self-hosted / free options** |        ✅       |         ⚠️        |    ✅    | ⭐ Open source<br>⭐ Sentry-compatible<br>⭐ Can self-host                              | Less polished UI                         |
-| **Better Stack**           |                      Free plan |        ✅       |         ✅         |    ✅    | ⭐ Logs + uptime + incidents<br>⭐ Beautiful dashboard<br>⭐ Very easy setup            | Free limits                              |
-| **Highlight.io**           |                      Free tier |        ✅       |         ✅         |    ✅    | ⭐ Error + session replay + logs<br>⭐ Open source                                     | Smaller ecosystem                        |
-| **SigNoz**                 |               Free self-hosted |        ✅       |         ✅         |    ✅    | ⭐ OpenTelemetry native<br>⭐ Full observability<br>⭐ No SaaS usage fee if self-hosted | You manage infrastructure                |
-| **OpenObserve**            |               Free/self-hosted |        ✅       |         ✅         |    ✅    | ⭐ Logs + metrics + traces<br>⭐ Very high ingestion efficiency                        | Self-hosting required for unlimited use  |
-| **Grafana Cloud**          |             Generous free tier |       ⚠️       |         ✅         |    ✅    | ⭐ Metrics + logs + traces<br>⭐ Grafana ecosystem<br>⭐ OpenTelemetry                  | More complex                             |
-| **Prometheus + Grafana**   |         **Free / open source** |       ⚠️       |         ✅         |    ⚠️   | ⭐ Completely free<br>⭐ Industry standard metrics                                     | You operate everything                   |
-| **Jaeger**                 |         **Free / open source** |        ❌       |     ✅ Tracing     |    ❌    | ⭐ Excellent distributed tracing<br>⭐ OpenTelemetry                                   | Not a complete monitoring platform       |
-| **OpenTelemetry**          |         **Free / open source** |        ✅       |         ✅         |    ✅    | ⭐ Vendor-neutral<br>⭐ Collect once, send anywhere                                    | It's a framework, not a hosted dashboard |
-| **Datadog**                |                      Free tier |        ✅       |         ✅         |    ✅    | ⭐ Extremely powerful<br>⭐ Excellent APM                                              | Free tier is quite limited               |
-| **New Relic**              |                  **100 GB/mo** |        ✅       |         ✅         |    ✅    | ⭐ Very generous free allowance<br>⭐ Full-stack observability                         | Can be overwhelming                      |
-| **AppDynamics**            |             Trial/free options |        ✅       |         ✅         |    ✅    | ⭐ Enterprise APM                                                                     | Not ideal for indie projects             |
-| **Elastic Observability**  |               Free/self-hosted |        ✅       |         ✅         |    ✅    | ⭐ Logs + APM + metrics<br>⭐ Powerful search                                          | Heavy infrastructure                     |
-| **Honeycomb**              |                      Free tier |       ⚠️       |         ✅         |    ✅    | ⭐ Excellent distributed tracing<br>⭐ High-cardinality data                           | More specialized                         |
-| **Axiom**                  |                      Free tier |       ⚠️       |         ✅         |    ✅    | ⭐ Very fast logs<br>⭐ Great for serverless                                           | Smaller ecosystem                        |
-| **Logtail / Better Stack** |                      Free tier |       ⚠️       |         ⚠️        |    ✅    | ⭐ Excellent log viewer<br>⭐ Very easy                                                | Primarily logs                           |
-| **Rollbar**                |                      Free tier |        ✅       |         ⚠️        |    ⚠️   | ⭐ Error-focused<br>⭐ Good alerts                                                     | Free quota limited                       |
-| **Bugsnag**                |                      Free tier |        ✅       |         ✅         |    ⚠️   | ⭐ Mobile + web error monitoring                                                      | Free plan limitations                    |
-| **Airbrake**               |             Trial/free options |        ✅       |         ✅         |    ⚠️   | ⭐ Simple error monitoring                                                            | Smaller free tier                        |
-| **Raygun**                 |                          Trial |        ✅       |         ✅         |    ❌    | ⭐ Excellent error + performance UI                                                   | Not really a permanent free option       |
+| Service | Free Tier | Compute | Database | Sleep/Scale-to-Zero | Best For |
+|---------|-----------|---------|----------|---------------------|----------|
+| **Render** | ✅ 750 hrs/mo | 0.5 CPU | PostgreSQL | 😴 Yes | General SaaS |
+| **Railway** | ⚠️ $1/mo credit | Yes | PostgreSQL | ❌ | Startups |
+| **Koyeb** | ✅ 1 service | 512 MB RAM | ❌ | 😴 Yes | APIs & backends |
+| **Google Cloud Run** | ✅ Free quota | Containers | ❌ | ⚡ Yes | Containerized apps |
+| **Azure Container Apps** | ✅ Free quota | Yes | ❌ | ⚡ Yes | Microsoft ecosystem |
+| **AWS Lambda** | ✅ Free tier | Serverless | DynamoDB | ⚡ Yes | Event-driven apps |
+| **Firebase Hosting** | ✅ Free | Limited backend | Firebase | — | Web/mobile apps |
+| **Oracle Cloud** | ✅ Always Free | Powerful VMs | MySQL/PostgreSQL | ❌ | Self-hosting |
+| **Zeabur** | ⚠️ Limited | Docker | PostgreSQL | Varies | Side projects |
+| **Northflank** | ✅ Free | Kubernetes | PostgreSQL | ❌ | Docker/Kubernetes |
 
-## 🤖 Free AI API / AI Inference Services
+---
 
-| Service                           |          Free AI          | Models / AI                 | API | ⭐ Pros                           | ⚠️ Cons                            | Best For                  |
-| --------------------------------- | :-----------------------: | --------------------------- | :-: | -------------------------------- | ---------------------------------- | ------------------------- |
-| **Google AI Studio / Gemini API** |             ✅             | Gemini                      |  ✅  | ⭐ Generous free tier, multimodal | Rate limits                        | **General AI**            |
-| **Groq**                          |             ✅             | Llama, Qwen, GPT OSS, etc.  |  ✅  | ⭐ Extremely fast inference       | Limited models/quotas              | **Fast APIs**             |
-| **Cerebras**                      |             ✅             | Llama, Qwen, etc.           |  ✅  | ⭐ Extremely fast                 | Smaller model selection            | **LLM inference**         |
-| **OpenRouter**                    |             ✅             | Many models                 |  ✅  | ⭐ One API for many providers     | Free models have limits            | **Model experimentation** |
-| **Hugging Face**                  |             ✅             | Thousands of open models    |  ✅  | ⭐ Huge ecosystem                 | Free inference is limited          | **Open-source AI**        |
-| **Mistral AI**                    |             ✅             | Mistral models              |  ✅  | ⭐ Strong open models             | Free API limits                    | **LLM / coding**          |
-| **Cohere**                        |             ✅             | Command / Embed / Rerank    |  ✅  | ⭐ RAG/search tools               | Limited free usage                 | **RAG / search**          |
-| **Cloudflare Workers AI**         |             ✅             | Llama, Qwen, etc.           |  ✅  | ⭐ Runs at the edge               | Model/compute limits               | **Edge AI**               |
-| **SambaNova Cloud**               |             ✅             | Llama, DeepSeek, etc.       |  ✅  | ⭐ Very fast inference            | Free quota limited                 | **LLM APIs**              |
-| **Together AI**                   |         ⚠️ Credits        | Open-source models          |  ✅  | ⭐ Huge model selection           | Free credits rather than unlimited | **AI development**        |
-| **Fireworks AI**                  |         ⚠️ Credits        | Llama, Qwen, DeepSeek, etc. |  ✅  | ⭐ Excellent inference platform   | Credits expire                     | **Production AI**         |
-| **DeepInfra**                     |         ⚠️ Credits        | Open-source models          |  ✅  | ⭐ Lots of models                 | Limited free credits               | **AI APIs**               |
-| **Novita AI**                     |         ⚠️ Credits        | LLM + image models          |  ✅  | ⭐ Many models                    | Free usage limited                 | **Generative AI**         |
-| **Replicate**                     |      ⚠️ Trial credits     | Image/video/LLM models      |  ✅  | ⭐ Huge model marketplace         | Not permanently free               | **AI experiments**        |
-| **Modal**                         |         ⚠️ Credits        | Any open model              |  ✅  | ⭐ Run your own models            | Credits/compute expire             | **GPU inference**         |
-| **AWS Bedrock**                   |       ⚠️ Free trials      | Claude, Llama, Nova, etc.   |  ✅  | ⭐ Enterprise-grade               | AWS complexity                     | **Production AI**         |
-| **Azure AI Foundry**              |         ⚠️ Credits        | OpenAI + open models        |  ✅  | ⭐ Enterprise ecosystem           | More complex                       | **Enterprise AI**         |
-| **GitHub Models**                 |             ✅             | Various open models         |  ✅  | ⭐ Easy for developers            | Rate limits                        | **Testing / development** |
-| **AI21 Labs**                     |      ⚠️ Free credits      | Jamba                       |  ✅  | Good LLM APIs                    | Limited free tier                  | **LLM apps**              |
-| **NVIDIA NIM**                    | ⚠️ Free developer options | NVIDIA/open models          |  ✅  | ⭐ GPU optimized                  | Usually requires NVIDIA ecosystem  | **AI infrastructure**     |
+## 💾 Databases & Storage
 
-## 🧠 Free AI Chat Services
+### SQL Databases
 
-| Service               |  Free AI  | Main strength                 |
-| --------------------- | :-------: | ----------------------------- |
-| **ChatGPT**           |     ✅     | General AI / coding           |
-| **Google Gemini**     |     ✅     | Multimodal / Google ecosystem |
-| **Claude**            |     ✅     | Writing / reasoning / coding  |
-| **Microsoft Copilot** |     ✅     | Web search + Microsoft        |
-| **Perplexity**        |     ✅     | AI search / research          |
-| **DeepSeek**          |     ✅     | Reasoning / coding            |
-| **Qwen Chat**         |     ✅     | Multilingual / coding         |
-| **Mistral Le Chat**   |     ✅     | General AI                    |
-| **Grok**              | ✅/limited | Search / general AI           |
-| **Meta AI**           |     ✅     | General AI                    |
-| **Poe**               | ✅/limited | Access to multiple models     |
-| **Duck.ai**           |     ✅     | Privacy-oriented AI chat      |
+| Service | Type | Free Quota | Scale-to-Zero | Best For |
+|---------|------|-----------|----------------|-----------| 
+| **Supabase** | PostgreSQL | 500 MB | ✅ | Full PostgreSQL + Auth + Realtime |
+| **Neon** | PostgreSQL | 500 MB | ✅ Serverless | Branching + Vercel integration |
+| **PlanetScale** | MySQL | 5 GB | ❌ | MySQL (serverless) |
+| **Prisma Postgres** | PostgreSQL | 500 MB | ✅ | TypeScript/Prisma-first |
+| **Nile** | PostgreSQL | 1 GB | ✅ | Multi-tenant SaaS |
+| **CockroachDB** | Distributed SQL | 10 GiB | ✅ | Distributed systems |
+| **Aiven** | PostgreSQL/MySQL/Redis | 1 GB | ⚠️ | Multiple database types |
 
-## 📊 Free User Tracking / Product Analytics
+### NoSQL & Document Databases
 
-| Service                | Free option                     |   Event / traffic limit | Session Replay | Funnels | Retention | ⭐ Pros                                                                      | ⚠️ Cons                                |
-| ---------------------- | ------------------------------- | ----------------------: | :------------: | :-----: | :-------: | --------------------------------------------------------------------------- | -------------------------------------- |
-| **Microsoft Clarity**  | 🟢 **Free forever**             |    **No traffic limit** |        ✅       |    ✅    |     ⚠️    | ⭐ Unlimited traffic<br>⭐ Heatmaps<br>⭐ Session recordings<br>⭐ AI insights  | Less focused on SaaS product analytics |
-| **PostHog**            | 🟢 Free tier                    | **Generous free usage** |        ✅       |    ✅    |     ✅     | ⭐ Product analytics<br>⭐ Feature flags<br>⭐ Session replay<br>⭐ Experiments | Can be complex                         |
-| **Umami**              | 🟢 Cloud Hobby / self-host      |           Limited cloud |        ❌       |    ✅    |     ⚠️    | ⭐ Privacy-friendly<br>⭐ Open source<br>⭐ Simple                             | Less powerful than PostHog             |
-| **Google Analytics 4** | 🟢 Free                         |            Large volume |        ❌       |    ✅    |     ✅     | ⭐ Mature<br>⭐ Powerful reporting<br>⭐ Google ecosystem                      | Complex, privacy concerns              |
-| **Matomo**             | 🟢 Self-hosted                  |              Unlimited* |       ✅*       |    ✅    |     ✅     | ⭐ Open source<br>⭐ Full data ownership                                      | Requires hosting                       |
-| **OpenPanel**          | 🟢 Self-hosted                  |    **Unlimited events** |        ❌       |    ✅    |     ✅     | ⭐ Open source<br>⭐ Simple product analytics                                 | Cloud version isn't permanently free   |
-| **Plausible**          | 🔴 No permanent cloud free tier |                       — |        ❌       |    ✅    |     ⚠️    | ⭐ Extremely simple<br>⭐ Privacy focused                                     | Only 30-day cloud trial                |
-| **Mixpanel**           | 🟢 Free tier                    |        **1M events/mo** |        ❌       |    ✅    |     ✅     | ⭐ Excellent product analytics<br>⭐ Funnels/cohorts                          | Can get expensive as you scale         |
-| **Amplitude**          | 🟢 Free tier                    |                 Limited |        ❌       |    ✅    |     ✅     | ⭐ Excellent product analytics<br>⭐ Behavioral analysis                      | More complex                           |
-| **Countly**            | 🟢 Self-hosted                  |              Unlimited* |        ✅       |    ✅    |     ✅     | ⭐ Open source<br>⭐ Product analytics                                        | Requires infrastructure                |
-| **Ackee**              | 🟢 Self-hosted                  |              Unlimited* |        ❌       |    ⚠️   |     ⚠️    | ⭐ Lightweight<br>⭐ Privacy-focused                                          | Basic analytics                        |
-| **GoatCounter**        | 🟢 Free                         |                 Limited |        ❌       |    ⚠️   |     ⚠️    | ⭐ Simple<br>⭐ Privacy focused                                               | Not a full product analytics platform  |
-| **Pirsch**             | 🟢 Self-hosted                  |              Unlimited* |        ❌       |    ✅    |     ⚠️    | ⭐ Privacy focused<br>⭐ Open source                                          | Cloud is paid                          |
-| **Fathom**             | 🔴 Trial                        |                       — |        ❌       |    ⚠️   |     ⚠️    | ⭐ Very simple<br>⭐ Privacy friendly                                         | No permanent free cloud plan           |
+| Service | Type | Free Quota | Realtime | Best For |
+|---------|------|-----------|----------|----------|
+| **MongoDB Atlas** | MongoDB | 512 MB | ❌ | Document storage |
+| **Firebase Firestore** | NoSQL | 1 GiB | ✅ | Mobile + web apps |
+| **Firebase Realtime DB** | NoSQL | 1 GB | ✅ | Simple sync |
+| **Convex** | Document DB | ~0.5 GB | ✅ | Realtime-first apps |
+| **Turso** | SQLite | 5 GB | ✅ | Edge-first SQLite |
+| **Cloudflare D1** | SQLite | 5 GB | ✅ | Workers integration |
 
-## 📣 Free Marketing Services
+### Cache & Search
 
-| Category               | Service                    | Free tier                   | ⭐ Pros                                  | ⚠️ Cons                           | Best for                 |
-| ---------------------- | -------------------------- | --------------------------- | --------------------------------------- | --------------------------------- | ------------------------ |
-| 📧 Email Marketing     | **Brevo**                  | ✅ 300 emails/day            | Large free allowance, automation, CRM   | Brevo branding                    | **Email campaigns**      |
-| 📧 Email Marketing     | **HubSpot**                | ✅ Free                      | CRM + forms + email + landing pages     | Free features are limited         | **All-in-one marketing** |
-| 📧 Email Marketing     | **Mailchimp**              | ✅ Limited                   | Mature, templates, automation           | Free tier is restrictive          | Newsletters              |
-| 📧 Email Marketing     | **MailerLite**             | ✅ Limited                   | Simple UI, landing pages, email         | Subscriber/send limits            | Creators                 |
-| 📧 Email Marketing     | **Sender**                 | ✅                           | Generous email quota                    | Smaller ecosystem                 | Newsletters              |
-| 📧 Transactional Email | **Resend**                 | ✅                           | Excellent API, developer-friendly       | Lower free quota                  | **SaaS emails**          |
-| 📧 Transactional Email | **Amazon SES**             | ⚠️ Low-cost/free allowances | Extremely cheap at scale                | AWS complexity                    | High-volume email        |
-| 📱 Social Scheduling   | **Buffer**                 | ✅                           | Easy scheduling, 3 channels             | 10 scheduled posts/channel        | **Social media**         |
-| 📱 Social Scheduling   | **Metricool**              | ✅ Limited                   | Social scheduling + analytics           | Limited free accounts             | Social media             |
-| 📱 Social Scheduling   | **Publer**                 | ✅ Limited                   | Multi-platform scheduling               | Free limits                       | Social content           |
-| 📱 Social Scheduling   | **Later**                  | ✅ Limited                   | Great visual planning                   | Limited free tier                 | Instagram                |
-| 🎨 Design              | **Canva**                  | ✅                           | Templates, social graphics, video       | Pro assets locked                 | **Content creation**     |
-| 🤖 AI Content          | **ChatGPT**                | ✅                           | Copy, ideas, research, strategy         | Usage limits                      | **Marketing content**    |
-| 🤖 AI Content          | **Gemini**                 | ✅                           | Writing + research + multimodal         | Usage limits                      | Content                  |
-| 🤖 AI Content          | **Claude**                 | ✅                           | Excellent long-form writing             | Usage limits                      | Copywriting              |
-| 🔎 SEO                 | **Google Search Console**  | ✅ Free                      | Search queries, indexing, rankings      | Google search only                | **SEO**                  |
-| 🔎 SEO                 | **Google Analytics**       | ✅ Free                      | Traffic + conversion analytics          | Complex                           | **Website analytics**    |
-| 🔎 SEO                 | **Bing Webmaster Tools**   | ✅ Free                      | Search performance + SEO tools          | Smaller search market             | SEO                      |
-| 🔎 SEO                 | **Ahrefs Webmaster Tools** | ✅ Limited                   | Site audit + backlinks                  | Limited vs paid Ahrefs            | SEO                      |
-| 🔎 SEO                 | **Semrush**                | ✅ Limited                   | Keywords + competitors                  | Very restricted free tier         | SEO research             |
-| 🔎 SEO                 | **Ubersuggest**            | ✅ Limited                   | Keyword research                        | Daily limits                      | Beginners                |
-| 📝 Forms / Leads       | **Tally**                  | ✅                           | Unlimited forms/submissions*            | Some advanced features paid       | **Lead capture**         |
-| 📝 Forms / Leads       | **Google Forms**           | ✅                           | Simple + unlimited-ish                  | Basic design                      | Simple forms             |
-| 📝 Forms / Leads       | **Typeform**               | ✅ Limited                   | Beautiful forms                         | Very limited free responses       | Premium forms            |
-| 📝 Forms / Leads       | **HubSpot Forms**          | ✅                           | CRM integration                         | HubSpot ecosystem                 | Lead generation          |
-| 📊 Analytics           | **PostHog**                | ✅ Generous                  | Product analytics + funnels + replay    | Can be complex                    | **SaaS analytics**       |
-| 📊 Analytics           | **Microsoft Clarity**      | ✅ Free                      | Unlimited traffic, heatmaps, recordings | Less product-focused              | **User behavior**        |
-| 📊 Analytics           | **Umami**                  | ✅                           | Privacy-focused, open source            | Less powerful                     | Simple analytics         |
-| 💬 Chat                | **Crisp**                  | ✅ Limited                   | Live chat, shared inbox                 | Free features limited             | Customer support         |
-| 💬 Chat                | **Tawk.to**                | ✅                           | Very generous free chat                 | UI less polished                  | **Live chat**            |
-| 💬 Chat                | **HubSpot Chat**           | ✅                           | CRM integration                         | Branding/limits                   | Lead conversion          |
-| 🔗 Link-in-bio         | **Linktree**               | ✅                           | Very easy                               | Branding/features limited         | Creators                 |
-| 🔗 Link-in-bio         | **Beacons**                | ✅                           | Creator-focused                         | Free tier limitations             | Creators                 |
-| 🔗 Short Links         | **Dub**                    | ✅ Limited                   | Modern, analytics, developer-friendly   | Usage limits                      | SaaS marketing           |
-| 🔗 Short Links         | **Bitly**                  | ✅ Limited                   | Mature + recognizable                   | Very limited free plan            | Link tracking            |
-| ⚡ Automation           | **Zapier**                 | ✅ Limited                   | Huge integration ecosystem              | Task limits                       | Automation               |
-| ⚡ Automation           | **Make**                   | ✅                           | Powerful workflows                      | More complicated                  | Advanced automation      |
-| ⚡ Automation           | **n8n**                    | ✅ Self-hosted               | Open source, extremely powerful         | You manage hosting                | **Indie hackers**        |
-| 🧲 CRM                 | **HubSpot CRM**            | ✅                           | Excellent free CRM                      | 1,000 contacts on free tools      | **Sales + marketing**    |
-| 🧲 CRM                 | **Zoho CRM**               | ✅ Limited                   | Full CRM                                | Free users/features limited       | Small businesses         |
-| 📰 Content             | **Substack**               | ✅                           | Newsletter + publishing                 | Platform dependency               | Writers                  |
-| 📰 Content             | **Beehiiv**                | ✅ Limited                   | Newsletter-focused                      | Subscriber limits                 | Newsletter SaaS          |
-| 🖼️ Images             | **Unsplash**               | ✅                           | High-quality images                     | License/usage considerations      | Blog/social              |
-| 🖼️ Images             | **Pexels**                 | ✅                           | Free stock photos/videos                | Less unique content               | Content                  |
-| 🎥 Video               | **CapCut**                 | ✅                           | Excellent short-form editing            | Some features paid                | **TikTok/Reels**         |
-| 🎥 Video               | **Canva**                  | ✅                           | Easy social videos                      | Pro assets                        | Marketing videos         |
-| 💰 Ads                 | **Google Ads**             | ⚠️ Credits/promos           | Huge reach                              | Not permanently free              | Paid acquisition         |
-| 💰 Ads                 | **Meta Ads**               | ❌                           | Huge audience                           | Requires ad budget                | Paid acquisition         |
-| 📈 A/B Testing         | **PostHog**                | ✅                           | Experiments + analytics                 | Requires setup                    | SaaS                     |
-| 📈 A/B Testing         | **VWO**                    | ⚠️ Trial                    | Powerful experimentation                | No meaningful permanent free tier | Growth teams             |
-| 🧑‍💻 Referral         | **Viral Loops**            | ⚠️ Limited                  | Referral campaigns                      | Free tier limited                 | Growth campaigns         |
+| Service | Type | Free Tier | Best For |
+|---------|------|-----------|----------|
+| **Upstash** | Redis | 256 MB | Serverless caching |
+| **Redis Cloud** | Redis | 30 MB | In-memory cache |
+| **Meilisearch** | Search | Self-hosted | Full-text search |
+| **Typesense** | Search | Self-hosted | Fast search API |
+
+---
+
+## 📧 Email Services
+
+### Transactional Email
+
+| Service | Free Quota | Key Strength | Best For |
+|---------|-----------|--------------|----------|
+| **Resend** | 3,000/mo (100/day) | Excellent DX, React Email | SaaS notifications |
+| **Brevo** | 300/day | SMTP + API | High-volume email |
+| **Amazon SES** | 200/day (first 30 days) | Extremely cheap at scale | Production email |
+| **Mailtrap** | 4,000/mo | Testing + production sandbox | Development |
+| **Mailgun** | Generous free | Powerful API, webhooks | Reliable delivery |
+| **PostMark** | 100/mo | Excellent deliverability | High-importance email |
+| **MailerSend** | 500/mo | Simple API, templates | Quick setup |
+
+### Email Marketing & Newsletters
+
+| Service | Free Tier | Subscribers | Best For |
+|---------|-----------|------------|----------|
+| **Brevo** | 300/day + automation | Unlimited | Email campaigns + CRM |
+| **Mailchimp** | ✅ Limited | Up to 500 | Traditional email marketing |
+| **MailerLite** | Limited | Up to 1,000 | Creators & small business |
+| **HubSpot** | ✅ Free | 1,000 contacts | All-in-one marketing |
+| **Substack** | ✅ Free | Unlimited | Newsletter publishing |
+| **Beehiiv** | Limited | 1,000 subscribers | Paid newsletter platform |
+
+---
+
+## 🐛 Monitoring, Errors & Performance
+
+### Error Tracking
+
+| Service | Free Tier | Stack Traces | Session Replay | Best For |
+|---------|-----------|--------------|----------------|----------|
+| **Sentry** | 5K events/mo | ✅ Excellent | ✅ Full replay | Industry standard |
+| **Highlight.io** | Free tier | ✅ | ✅ Error + logs + replay | All-in-one observability |
+| **Rollbar** | Free tier | ✅ | ⚠️ Limited | Simple error monitoring |
+| **Bugsnag** | Free tier | ✅ | ⚠️ Limited | Mobile + web errors |
+| **GlitchTip** | Self-hosted / Free | ✅ | ⚠️ | Open-source Sentry alternative |
+| **Airbrake** | Trial/free | ✅ | ⚠️ | Mature error monitoring |
+
+### Logs, Metrics & APM
+
+| Service | Free Tier | Logs | Metrics | Traces | Best For |
+|---------|-----------|------|---------|--------|----------|
+| **Better Stack** | ✅ Free | ✅ | ✅ Uptime | ✅ | Logs + incident management |
+| **Grafana Cloud** | Generous free | ✅ | ✅ | ✅ | Metrics + logs + traces |
+| **New Relic** | 100 GB/mo | ✅ | ✅ | ✅ | Full-stack observability |
+| **SigNoz** | Self-hosted | ✅ | ✅ | ✅ OpenTelemetry | Complete observability |
+| **OpenObserve** | Self-hosted/free | ✅ High efficiency | ✅ | ✅ | Logs + metrics + traces |
+| **Elastic Observability** | Self-hosted/free | ✅ Powerful | ✅ | ✅ | Logs + APM + metrics |
+| **Prometheus + Grafana** | ✅ Open source | ⚠️ | ✅ Industry std | ⚠️ | Metrics & dashboards |
+| **Honeycomb** | Free tier | ⚠️ | ⚠️ | ✅ Distributed tracing | High-cardinality observability |
+| **Jaeger** | ✅ Open source | ❌ | ❌ | ✅ | Distributed tracing |
+| **Datadog** | Free tier | ✅ | ✅ | ✅ | Powerful all-in-one APM |
+
+---
+
+## 🤖 AI & Machine Learning
+
+### AI APIs & LLM Inference
+
+| Service | Free Tier | Models | Speed | Best For |
+|---------|-----------|--------|-------|----------|
+| **Google Gemini API** | ✅ Generous | Gemini | Fast | Multimodal, general AI |
+| **Groq** | ✅ Free | Llama, Qwen, etc. | ⚡ Extremely fast | Fast API inference |
+| **Cerebras** | ✅ Free | Llama, Qwen | ⚡ Extremely fast | LLM inference |
+| **Mistral AI** | ✅ Free | Mistral models | Good | Open models |
+| **GitHub Models** | ✅ Free | Various open | Good | Developer-friendly |
+| **OpenRouter** | ✅ Free | 200+ models | Variable | Multi-model experimentation |
+| **Hugging Face** | ✅ Free | 1000s of models | Variable | Open-source AI ecosystem |
+| **Cloudflare Workers AI** | ✅ Free | Llama, Qwen | Edge | Edge AI deployment |
+| **Cohere** | ✅ Free | Command, Embed | Good | RAG & search |
+| **SambaNova Cloud** | ✅ Free | Llama, DeepSeek | ⚡ Fast | Production inference |
+| **Together AI** | ⚠️ Free credits | Open models | Good | Model variety |
+| **Fireworks AI** | ⚠️ Free credits | Llama, Qwen, DeepSeek | Good | Production platform |
+| **DeepInfra** | ⚠️ Free credits | Open models | Good | Many models |
+| **Replicate** | ⚠️ Trial credits | Image/video/LLM | Variable | Model marketplace |
+| **Modal** | ⚠️ Credits | Any model | Flexible | Run your own models |
+| **AWS Bedrock** | ⚠️ Free trials | Claude, Llama, Nova | Good | Enterprise-grade |
+| **Azure AI Foundry** | ⚠️ Credits | OpenAI + open | Good | Microsoft ecosystem |
+
+### Free AI Chat Interfaces
+
+| Service | Features |
+|---------|----------|
+| **ChatGPT** | General AI, coding, web search (limited) |
+| **Google Gemini** | Multimodal, Google ecosystem integration |
+| **Claude** | Excellent writing & reasoning |
+| **DeepSeek** | Reasoning, coding, affordable |
+| **Mistral Le Chat** | General AI, open models |
+| **Perplexity** | AI search & research |
+| **Qwen Chat** | Multilingual, strong coding |
+| **Meta AI** | General AI across Meta platforms |
+| **Grok** | Real-time search integration |
+| **Microsoft Copilot** | Web search + Microsoft integration |
+| **Poe** | Access to multiple AI models |
+
+---
+
+## 📊 Analytics & Tracking
+
+### Product Analytics & Session Replay
+
+| Service | Free Tier | Events | Session Replay | Funnels | Self-hosted |
+|---------|-----------|--------|----------------|---------|-------------|
+| **PostHog** | Generous free | Unlimited-ish | ✅ Full | ✅ | ✅ |
+| **Microsoft Clarity** | ✅ Free forever | Unlimited traffic | ✅ | ✅ | ❌ |
+| **Umami** | Cloud/self-hosted | Limited cloud | ✅ | ⚠️ | ✅ |
+| **Matomo** | ✅ Self-hosted | Unlimited | ✅ | ✅ | ✅ |
+| **OpenPanel** | ✅ Self-hosted | Unlimited events | ✅ | ✅ | ✅ |
+| **Mixpanel** | Free tier | 1M events/mo | ❌ | ✅ | ❌ |
+| **Amplitude** | Free tier | Limited | ❌ | ✅ | ❌ |
+| **Google Analytics 4** | ✅ Free | Large volume | ✅ | ✅ | ❌ |
+| **Plausible** | 🔴 Trial only | — | ❌ | ❌ | ❌ |
+| **Countly** | ✅ Self-hosted | Unlimited | ✅ | ✅ | ✅ |
+| **Ackee** | ✅ Self-hosted | Unlimited | ❌ | ⚠️ | ✅ |
+| **GoatCounter** | ✅ Free | Limited | ❌ | ⚠️ | ❌ |
+| **Pirsch** | ✅ Self-hosted | Unlimited | ❌ | ✅ | ✅ |
+| **Fathom** | 🔴 Trial only | — | ❌ | ⚠️ | ❌ |
+
+### Website & SEO Analytics
+
+| Service | Free Tier | Best For |
+|---------|-----------|----------|
+| **Google Search Console** | ✅ Free | Search performance, indexing |
+| **Google Analytics 4** | ✅ Free | Website traffic & conversions |
+| **Bing Webmaster Tools** | ✅ Free | Bing search optimization |
+| **Ahrefs Webmaster Tools** | Limited | Site audit, backlinks |
+| **Semrush** | Limited | Keywords, competitor analysis |
+| **Ubersuggest** | Limited | Keyword research |
+
+---
+
+## 📣 Marketing & Growth
+
+### Email Marketing
+
+*See Email Services section above*
+
+### Social Media & Content
+
+| Category | Service | Free Tier | Best For |
+|----------|---------|-----------|----------|
+| **Social Scheduling** | Buffer | ✅ | 3 channels, social media |
+| **Social Scheduling** | Metricool | Limited | Analytics + scheduling |
+| **Social Scheduling** | Publer | Limited | Multi-platform |
+| **Social Scheduling** | Later | Limited | Instagram planning |
+| **Content Creation** | Canva | ✅ | Graphics, video, social |
+| **AI Content** | ChatGPT | ✅ Limited | Copy, ideas, strategy |
+| **AI Content** | Claude | ✅ Limited | Long-form writing |
+| **AI Content** | Gemini | ✅ Limited | Writing, research |
+
+### Forms & Lead Capture
+
+| Service | Free Tier | Submissions | Best For |
+|---------|-----------|------------|----------|
+| **Tally** | ✅ | Unlimited* | Simple forms |
+| **Google Forms** | ✅ | Unlimited-ish | Quick surveys |
+| **HubSpot Forms** | ✅ | Unlimited | CRM integration |
+| **Typeform** | Limited | Very limited responses | Beautiful forms |
+
+### Automation & Integration
+
+| Service | Free Tier | Best For |
+|---------|-----------|----------|
+| **Make (Zapier alternative)** | ✅ Workflows | Powerful automation |
+| **Zapier** | Limited | 100+ integration ecosystem |
+| **n8n** | ✅ Self-hosted | Open-source automation |
+
+### CRM & Sales
+
+| Service | Free Tier | Contacts | Best For |
+|---------|-----------|----------|----------|
+| **HubSpot CRM** | ✅ Free | 1,000 limit | Sales + marketing |
+| **Zoho CRM** | Limited | Limited | Small businesses |
+
+### Other Marketing Tools
+
+| Category | Service | Free Tier |
+|----------|---------|-----------|
+| **Linkography** | Linktree | ✅ Basic |
+| **Linkography** | Beacons | ✅ Creator-focused |
+| **Short Links** | Dub | Limited + analytics |
+| **Short Links** | Bitly | Limited |
+| **Live Chat** | Tawk.to | ✅ Generous |
+| **Live Chat** | Crisp | Limited |
+| **Live Chat** | HubSpot Chat | ✅ Free |
+
+---
+
+## 🎨 Design & Media
+
+### Images & Stock Photos
+
+| Service | Free Tier | Usage |
+|---------|-----------|-------|
+| **Unsplash** | ✅ | High-quality images |
+| **Pexels** | ✅ | Free stock photos + videos |
+| **Pixabay** | ✅ | Stock images & vectors |
+
+### Video & Editing
+
+| Service | Free Tier | Best For |
+|---------|-----------|----------|
+| **CapCut** | ✅ | Short-form video editing |
+| **Canva** | ✅ | Social videos, graphics |
+| **DaVinci Resolve** | ✅ Open source | Professional video editing |
+
+---
+
+## 🛠️ Developer Tools
+
+### Version Control & CI/CD
+
+| Service | Free Tier |
+|---------|-----------|
+| **GitHub** | ✅ Unlimited public/private + Actions |
+| **GitLab** | ✅ Free tier with CI/CD |
+| **Gitea** | ✅ Self-hosted Git |
+
+### Code Quality & Testing
+
+| Service | Free Tier |
+|---------|-----------|
+| **SonarCloud** | ✅ Free for open-source |
+| **CodeFactor** | ✅ Basic analysis |
+
+### API Development
+
+| Service | Free Tier |
+|---------|-----------|
+| **Postman** | ✅ Limited but generous |
+| **Insomnia** | ✅ Open source |
+
+---
+
+## 💡 Tips for Choosing Free Services
+
+✅ **Check the fine print:**
+- Does it have hard usage limits that will hit you?
+- Does it require a credit card? (⚠️ Can lead to unexpected charges)
+- Is it "free forever" or trial-only?
+
+✅ **Evaluate for production:**
+- Free tier reliability & uptime SLAs
+- Support quality (community vs. enterprise)
+- Pricing cliff (how much when you outgrow free tier?)
+
+✅ **Privacy & data considerations:**
+- Data residency requirements
+- GDPR/compliance needs
+- Vendor lock-in risk
+
+---
+
+## 📝 Contributing
+
+Found an outdated service or missing tool? **Pull requests welcome!**
+
+Please include:
+- Service name & link
+- Free tier details
+- Key pros/cons
+- Best use case
+
+---
+
+## 📄 License
+
+MIT - Free to use and modify
