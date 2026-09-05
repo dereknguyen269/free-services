@@ -37,6 +37,7 @@ A comprehensive, curated guide to the best **free-forever** and **generous free-
 | **Render** | ✅ 750 hrs/mo | 0.5 CPU | PostgreSQL | 😴 Yes | General SaaS |
 | **Railway** | ⚠️ $1/mo credit | Yes | PostgreSQL | ❌ | Startups |
 | **Koyeb** | ✅ 1 service | 512 MB RAM | ❌ | 😴 Yes | APIs & backends |
+| **Fly.io** | ✅ Generous | Shared CPU | PostgreSQL add-on | ⚡ Yes | Docker apps & full-stack |
 | **Google Cloud Run** | ✅ Free quota | Containers | ❌ | ⚡ Yes | Containerized apps |
 | **Azure Container Apps** | ✅ Free quota | Yes | ❌ | ⚡ Yes | Microsoft ecosystem |
 | **AWS Lambda** | ✅ Free tier | Serverless | DynamoDB | ⚡ Yes | Event-driven apps |
