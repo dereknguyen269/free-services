@@ -33,6 +33,7 @@ A comprehensive, curated guide to the best **free-forever** and **generous free-
 
 | Service | Free Tier | Compute | Database | Sleep/Scale-to-Zero | Best For |
 |---------|-----------|---------|----------|---------------------|----------|
+| **Vercel** | ✅ Hobby | Serverless | ❌ | ⚡ Yes | Full-stack Next.js & React |
 | **Render** | ✅ 750 hrs/mo | 0.5 CPU | PostgreSQL | 😴 Yes | General SaaS |
 | **Railway** | ⚠️ $1/mo credit | Yes | PostgreSQL | ❌ | Startups |
 | **Koyeb** | ✅ 1 service | 512 MB RAM | ❌ | 😴 Yes | APIs & backends |
