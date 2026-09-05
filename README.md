@@ -144,3 +144,58 @@
 | **Pirsch**             | 🟢 Self-hosted                  |              Unlimited* |        ❌       |    ✅    |     ⚠️    | ⭐ Privacy focused<br>⭐ Open source                                          | Cloud is paid                          |
 | **Fathom**             | 🔴 Trial                        |                       — |        ❌       |    ⚠️   |     ⚠️    | ⭐ Very simple<br>⭐ Privacy friendly                                         | No permanent free cloud plan           |
 
+## 📣 Free Marketing Services
+
+| Category               | Service                    | Free tier                   | ⭐ Pros                                  | ⚠️ Cons                           | Best for                 |
+| ---------------------- | -------------------------- | --------------------------- | --------------------------------------- | --------------------------------- | ------------------------ |
+| 📧 Email Marketing     | **Brevo**                  | ✅ 300 emails/day            | Large free allowance, automation, CRM   | Brevo branding                    | **Email campaigns**      |
+| 📧 Email Marketing     | **HubSpot**                | ✅ Free                      | CRM + forms + email + landing pages     | Free features are limited         | **All-in-one marketing** |
+| 📧 Email Marketing     | **Mailchimp**              | ✅ Limited                   | Mature, templates, automation           | Free tier is restrictive          | Newsletters              |
+| 📧 Email Marketing     | **MailerLite**             | ✅ Limited                   | Simple UI, landing pages, email         | Subscriber/send limits            | Creators                 |
+| 📧 Email Marketing     | **Sender**                 | ✅                           | Generous email quota                    | Smaller ecosystem                 | Newsletters              |
+| 📧 Transactional Email | **Resend**                 | ✅                           | Excellent API, developer-friendly       | Lower free quota                  | **SaaS emails**          |
+| 📧 Transactional Email | **Amazon SES**             | ⚠️ Low-cost/free allowances | Extremely cheap at scale                | AWS complexity                    | High-volume email        |
+| 📱 Social Scheduling   | **Buffer**                 | ✅                           | Easy scheduling, 3 channels             | 10 scheduled posts/channel        | **Social media**         |
+| 📱 Social Scheduling   | **Metricool**              | ✅ Limited                   | Social scheduling + analytics           | Limited free accounts             | Social media             |
+| 📱 Social Scheduling   | **Publer**                 | ✅ Limited                   | Multi-platform scheduling               | Free limits                       | Social content           |
+| 📱 Social Scheduling   | **Later**                  | ✅ Limited                   | Great visual planning                   | Limited free tier                 | Instagram                |
+| 🎨 Design              | **Canva**                  | ✅                           | Templates, social graphics, video       | Pro assets locked                 | **Content creation**     |
+| 🤖 AI Content          | **ChatGPT**                | ✅                           | Copy, ideas, research, strategy         | Usage limits                      | **Marketing content**    |
+| 🤖 AI Content          | **Gemini**                 | ✅                           | Writing + research + multimodal         | Usage limits                      | Content                  |
+| 🤖 AI Content          | **Claude**                 | ✅                           | Excellent long-form writing             | Usage limits                      | Copywriting              |
+| 🔎 SEO                 | **Google Search Console**  | ✅ Free                      | Search queries, indexing, rankings      | Google search only                | **SEO**                  |
+| 🔎 SEO                 | **Google Analytics**       | ✅ Free                      | Traffic + conversion analytics          | Complex                           | **Website analytics**    |
+| 🔎 SEO                 | **Bing Webmaster Tools**   | ✅ Free                      | Search performance + SEO tools          | Smaller search market             | SEO                      |
+| 🔎 SEO                 | **Ahrefs Webmaster Tools** | ✅ Limited                   | Site audit + backlinks                  | Limited vs paid Ahrefs            | SEO                      |
+| 🔎 SEO                 | **Semrush**                | ✅ Limited                   | Keywords + competitors                  | Very restricted free tier         | SEO research             |
+| 🔎 SEO                 | **Ubersuggest**            | ✅ Limited                   | Keyword research                        | Daily limits                      | Beginners                |
+| 📝 Forms / Leads       | **Tally**                  | ✅                           | Unlimited forms/submissions*            | Some advanced features paid       | **Lead capture**         |
+| 📝 Forms / Leads       | **Google Forms**           | ✅                           | Simple + unlimited-ish                  | Basic design                      | Simple forms             |
+| 📝 Forms / Leads       | **Typeform**               | ✅ Limited                   | Beautiful forms                         | Very limited free responses       | Premium forms            |
+| 📝 Forms / Leads       | **HubSpot Forms**          | ✅                           | CRM integration                         | HubSpot ecosystem                 | Lead generation          |
+| 📊 Analytics           | **PostHog**                | ✅ Generous                  | Product analytics + funnels + replay    | Can be complex                    | **SaaS analytics**       |
+| 📊 Analytics           | **Microsoft Clarity**      | ✅ Free                      | Unlimited traffic, heatmaps, recordings | Less product-focused              | **User behavior**        |
+| 📊 Analytics           | **Umami**                  | ✅                           | Privacy-focused, open source            | Less powerful                     | Simple analytics         |
+| 💬 Chat                | **Crisp**                  | ✅ Limited                   | Live chat, shared inbox                 | Free features limited             | Customer support         |
+| 💬 Chat                | **Tawk.to**                | ✅                           | Very generous free chat                 | UI less polished                  | **Live chat**            |
+| 💬 Chat                | **HubSpot Chat**           | ✅                           | CRM integration                         | Branding/limits                   | Lead conversion          |
+| 🔗 Link-in-bio         | **Linktree**               | ✅                           | Very easy                               | Branding/features limited         | Creators                 |
+| 🔗 Link-in-bio         | **Beacons**                | ✅                           | Creator-focused                         | Free tier limitations             | Creators                 |
+| 🔗 Short Links         | **Dub**                    | ✅ Limited                   | Modern, analytics, developer-friendly   | Usage limits                      | SaaS marketing           |
+| 🔗 Short Links         | **Bitly**                  | ✅ Limited                   | Mature + recognizable                   | Very limited free plan            | Link tracking            |
+| ⚡ Automation           | **Zapier**                 | ✅ Limited                   | Huge integration ecosystem              | Task limits                       | Automation               |
+| ⚡ Automation           | **Make**                   | ✅                           | Powerful workflows                      | More complicated                  | Advanced automation      |
+| ⚡ Automation           | **n8n**                    | ✅ Self-hosted               | Open source, extremely powerful         | You manage hosting                | **Indie hackers**        |
+| 🧲 CRM                 | **HubSpot CRM**            | ✅                           | Excellent free CRM                      | 1,000 contacts on free tools      | **Sales + marketing**    |
+| 🧲 CRM                 | **Zoho CRM**               | ✅ Limited                   | Full CRM                                | Free users/features limited       | Small businesses         |
+| 📰 Content             | **Substack**               | ✅                           | Newsletter + publishing                 | Platform dependency               | Writers                  |
+| 📰 Content             | **Beehiiv**                | ✅ Limited                   | Newsletter-focused                      | Subscriber limits                 | Newsletter SaaS          |
+| 🖼️ Images             | **Unsplash**               | ✅                           | High-quality images                     | License/usage considerations      | Blog/social              |
+| 🖼️ Images             | **Pexels**                 | ✅                           | Free stock photos/videos                | Less unique content               | Content                  |
+| 🎥 Video               | **CapCut**                 | ✅                           | Excellent short-form editing            | Some features paid                | **TikTok/Reels**         |
+| 🎥 Video               | **Canva**                  | ✅                           | Easy social videos                      | Pro assets                        | Marketing videos         |
+| 💰 Ads                 | **Google Ads**             | ⚠️ Credits/promos           | Huge reach                              | Not permanently free              | Paid acquisition         |
+| 💰 Ads                 | **Meta Ads**               | ❌                           | Huge audience                           | Requires ad budget                | Paid acquisition         |
+| 📈 A/B Testing         | **PostHog**                | ✅                           | Experiments + analytics                 | Requires setup                    | SaaS                     |
+| 📈 A/B Testing         | **VWO**                    | ⚠️ Trial                    | Powerful experimentation                | No meaningful permanent free tier | Growth teams             |
+| 🧑‍💻 Referral         | **Viral Loops**            | ⚠️ Limited                  | Referral campaigns                      | Free tier limited                 | Growth campaigns         |
