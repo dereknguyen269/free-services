@@ -124,3 +124,23 @@
 | **Meta AI**           |     ✅     | General AI                    |
 | **Poe**               | ✅/limited | Access to multiple models     |
 | **Duck.ai**           |     ✅     | Privacy-oriented AI chat      |
+
+## 📊 Free User Tracking / Product Analytics
+
+| Service                | Free option                     |   Event / traffic limit | Session Replay | Funnels | Retention | ⭐ Pros                                                                      | ⚠️ Cons                                |
+| ---------------------- | ------------------------------- | ----------------------: | :------------: | :-----: | :-------: | --------------------------------------------------------------------------- | -------------------------------------- |
+| **Microsoft Clarity**  | 🟢 **Free forever**             |    **No traffic limit** |        ✅       |    ✅    |     ⚠️    | ⭐ Unlimited traffic<br>⭐ Heatmaps<br>⭐ Session recordings<br>⭐ AI insights  | Less focused on SaaS product analytics |
+| **PostHog**            | 🟢 Free tier                    | **Generous free usage** |        ✅       |    ✅    |     ✅     | ⭐ Product analytics<br>⭐ Feature flags<br>⭐ Session replay<br>⭐ Experiments | Can be complex                         |
+| **Umami**              | 🟢 Cloud Hobby / self-host      |           Limited cloud |        ❌       |    ✅    |     ⚠️    | ⭐ Privacy-friendly<br>⭐ Open source<br>⭐ Simple                             | Less powerful than PostHog             |
+| **Google Analytics 4** | 🟢 Free                         |            Large volume |        ❌       |    ✅    |     ✅     | ⭐ Mature<br>⭐ Powerful reporting<br>⭐ Google ecosystem                      | Complex, privacy concerns              |
+| **Matomo**             | 🟢 Self-hosted                  |              Unlimited* |       ✅*       |    ✅    |     ✅     | ⭐ Open source<br>⭐ Full data ownership                                      | Requires hosting                       |
+| **OpenPanel**          | 🟢 Self-hosted                  |    **Unlimited events** |        ❌       |    ✅    |     ✅     | ⭐ Open source<br>⭐ Simple product analytics                                 | Cloud version isn't permanently free   |
+| **Plausible**          | 🔴 No permanent cloud free tier |                       — |        ❌       |    ✅    |     ⚠️    | ⭐ Extremely simple<br>⭐ Privacy focused                                     | Only 30-day cloud trial                |
+| **Mixpanel**           | 🟢 Free tier                    |        **1M events/mo** |        ❌       |    ✅    |     ✅     | ⭐ Excellent product analytics<br>⭐ Funnels/cohorts                          | Can get expensive as you scale         |
+| **Amplitude**          | 🟢 Free tier                    |                 Limited |        ❌       |    ✅    |     ✅     | ⭐ Excellent product analytics<br>⭐ Behavioral analysis                      | More complex                           |
+| **Countly**            | 🟢 Self-hosted                  |              Unlimited* |        ✅       |    ✅    |     ✅     | ⭐ Open source<br>⭐ Product analytics                                        | Requires infrastructure                |
+| **Ackee**              | 🟢 Self-hosted                  |              Unlimited* |        ❌       |    ⚠️   |     ⚠️    | ⭐ Lightweight<br>⭐ Privacy-focused                                          | Basic analytics                        |
+| **GoatCounter**        | 🟢 Free                         |                 Limited |        ❌       |    ⚠️   |     ⚠️    | ⭐ Simple<br>⭐ Privacy focused                                               | Not a full product analytics platform  |
+| **Pirsch**             | 🟢 Self-hosted                  |              Unlimited* |        ❌       |    ✅    |     ⚠️    | ⭐ Privacy focused<br>⭐ Open source                                          | Cloud is paid                          |
+| **Fathom**             | 🔴 Trial                        |                       — |        ❌       |    ⚠️   |     ⚠️    | ⭐ Very simple<br>⭐ Privacy friendly                                         | No permanent free cloud plan           |
+
