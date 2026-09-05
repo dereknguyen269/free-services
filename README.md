@@ -83,3 +83,44 @@
 | **Airbrake**               |             Trial/free options |        ✅       |         ✅         |    ⚠️   | ⭐ Simple error monitoring                                                            | Smaller free tier                        |
 | **Raygun**                 |                          Trial |        ✅       |         ✅         |    ❌    | ⭐ Excellent error + performance UI                                                   | Not really a permanent free option       |
 
+## 🤖 Free AI API / AI Inference Services
+
+| Service                           |          Free AI          | Models / AI                 | API | ⭐ Pros                           | ⚠️ Cons                            | Best For                  |
+| --------------------------------- | :-----------------------: | --------------------------- | :-: | -------------------------------- | ---------------------------------- | ------------------------- |
+| **Google AI Studio / Gemini API** |             ✅             | Gemini                      |  ✅  | ⭐ Generous free tier, multimodal | Rate limits                        | **General AI**            |
+| **Groq**                          |             ✅             | Llama, Qwen, GPT OSS, etc.  |  ✅  | ⭐ Extremely fast inference       | Limited models/quotas              | **Fast APIs**             |
+| **Cerebras**                      |             ✅             | Llama, Qwen, etc.           |  ✅  | ⭐ Extremely fast                 | Smaller model selection            | **LLM inference**         |
+| **OpenRouter**                    |             ✅             | Many models                 |  ✅  | ⭐ One API for many providers     | Free models have limits            | **Model experimentation** |
+| **Hugging Face**                  |             ✅             | Thousands of open models    |  ✅  | ⭐ Huge ecosystem                 | Free inference is limited          | **Open-source AI**        |
+| **Mistral AI**                    |             ✅             | Mistral models              |  ✅  | ⭐ Strong open models             | Free API limits                    | **LLM / coding**          |
+| **Cohere**                        |             ✅             | Command / Embed / Rerank    |  ✅  | ⭐ RAG/search tools               | Limited free usage                 | **RAG / search**          |
+| **Cloudflare Workers AI**         |             ✅             | Llama, Qwen, etc.           |  ✅  | ⭐ Runs at the edge               | Model/compute limits               | **Edge AI**               |
+| **SambaNova Cloud**               |             ✅             | Llama, DeepSeek, etc.       |  ✅  | ⭐ Very fast inference            | Free quota limited                 | **LLM APIs**              |
+| **Together AI**                   |         ⚠️ Credits        | Open-source models          |  ✅  | ⭐ Huge model selection           | Free credits rather than unlimited | **AI development**        |
+| **Fireworks AI**                  |         ⚠️ Credits        | Llama, Qwen, DeepSeek, etc. |  ✅  | ⭐ Excellent inference platform   | Credits expire                     | **Production AI**         |
+| **DeepInfra**                     |         ⚠️ Credits        | Open-source models          |  ✅  | ⭐ Lots of models                 | Limited free credits               | **AI APIs**               |
+| **Novita AI**                     |         ⚠️ Credits        | LLM + image models          |  ✅  | ⭐ Many models                    | Free usage limited                 | **Generative AI**         |
+| **Replicate**                     |      ⚠️ Trial credits     | Image/video/LLM models      |  ✅  | ⭐ Huge model marketplace         | Not permanently free               | **AI experiments**        |
+| **Modal**                         |         ⚠️ Credits        | Any open model              |  ✅  | ⭐ Run your own models            | Credits/compute expire             | **GPU inference**         |
+| **AWS Bedrock**                   |       ⚠️ Free trials      | Claude, Llama, Nova, etc.   |  ✅  | ⭐ Enterprise-grade               | AWS complexity                     | **Production AI**         |
+| **Azure AI Foundry**              |         ⚠️ Credits        | OpenAI + open models        |  ✅  | ⭐ Enterprise ecosystem           | More complex                       | **Enterprise AI**         |
+| **GitHub Models**                 |             ✅             | Various open models         |  ✅  | ⭐ Easy for developers            | Rate limits                        | **Testing / development** |
+| **AI21 Labs**                     |      ⚠️ Free credits      | Jamba                       |  ✅  | Good LLM APIs                    | Limited free tier                  | **LLM apps**              |
+| **NVIDIA NIM**                    | ⚠️ Free developer options | NVIDIA/open models          |  ✅  | ⭐ GPU optimized                  | Usually requires NVIDIA ecosystem  | **AI infrastructure**     |
+
+## 🧠 Free AI Chat Services
+
+| Service               |  Free AI  | Main strength                 |
+| --------------------- | :-------: | ----------------------------- |
+| **ChatGPT**           |     ✅     | General AI / coding           |
+| **Google Gemini**     |     ✅     | Multimodal / Google ecosystem |
+| **Claude**            |     ✅     | Writing / reasoning / coding  |
+| **Microsoft Copilot** |     ✅     | Web search + Microsoft        |
+| **Perplexity**        |     ✅     | AI search / research          |
+| **DeepSeek**          |     ✅     | Reasoning / coding            |
+| **Qwen Chat**         |     ✅     | Multilingual / coding         |
+| **Mistral Le Chat**   |     ✅     | General AI                    |
+| **Grok**              | ✅/limited | Search / general AI           |
+| **Meta AI**           |     ✅     | General AI                    |
+| **Poe**               | ✅/limited | Access to multiple models     |
+| **Duck.ai**           |     ✅     | Privacy-oriented AI chat      |
