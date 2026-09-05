@@ -1,5 +1,27 @@
 # free-services
 
+## 🚀 Free Hosting Services for Developers
+
+| Service                  | Free Tier               | Docker | Sleep / Scale-to-Zero | Database   | ⭐ Pros                                    | ⚠️ Cons                      | Best For                     |
+| ------------------------ | ----------------------- | :----: | :-------------------: | ---------- | ----------------------------------------- | ---------------------------- | ---------------------------- |
+| **Render**               | ✅ 750 hrs/mo            |    ✅   |         😴 Yes        | PostgreSQL | Very easy setup, Git deploy, Docker       | Cold starts, limited free DB | **General SaaS**             |
+| **Koyeb**                | ✅ 1 service             |    ✅   |         😴 Yes        | ❌          | 512 MB RAM, 2 GB SSD, easy deployment     | Free resources are limited   | **APIs / Backend**           |
+| **Railway**              | ⚠️ $1 credit/mo         |    ✅   |           ❌           | PostgreSQL | ⭐ Excellent DX, very easy deployment      | Not truly free forever       | **Startups**                 |
+| **Google Cloud Run**     | ✅ Free quota            |    ✅   |         ⚡ Yes         | ❌          | Docker-native, autoscaling, scale-to-zero | GCP setup can be complex     | **Container apps**           |
+| **Cloudflare Workers**   | ✅                       |   ⚠️   |           ❌           | D1 / KV    | Extremely fast, global edge network       | Different runtime model      | **APIs / Edge apps**         |
+| **Cloudflare Pages**     | ✅                       |   ⚠️   |           ❌           | D1 / KV    | Free CDN, Git deployment                  | Backend limitations          | **Frontend**                 |
+| **Vercel**               | ✅                       |   ⚠️   |         ⚡ Yes         | ❌          | ⭐ Best for Next.js, CDN, previews         | Serverless limitations       | **Next.js**                  |
+| **Netlify**              | ✅                       |   ⚠️   |         ⚡ Yes         | ❌          | Easy deployment, Functions                | Backend limitations          | **Frontend / JAMstack**      |
+| **Northflank**           | ✅                       |    ✅   |           ❌           | PostgreSQL | Kubernetes-based, Docker-native           | More complex                 | **Docker / DevOps**          |
+| **Zeabur**               | ⚠️ Limited              |    ✅   |         Varies        | PostgreSQL | Very easy Docker deployment               | Free quota limited           | **Side projects**            |
+| **Azure Container Apps** | ✅ Free quota            |    ✅   |         ⚡ Yes         | ❌          | Serverless containers, autoscaling        | Azure complexity             | **Container APIs**           |
+| **Oracle Cloud**         | ✅ Always Free resources |    ✅   |           ❌           | ✅          | Powerful free VM resources                | Difficult setup              | **Self-hosting**             |
+| **AWS Lambda**           | ✅ Free quota            |    ✅   |         ⚡ Yes         | DynamoDB   | Serverless, huge ecosystem                | Execution limits             | **Serverless APIs**          |
+| **AWS Amplify**          | ✅ Free quota            |   ⚠️   |         ⚡ Yes         | DynamoDB   | Full AWS integration                      | AWS complexity               | **Full-stack apps**          |
+| **Firebase Hosting**     | ✅                       |    ❌   |           —           | Firebase   | Easy frontend + backend ecosystem         | Vendor lock-in               | **Web/mobile apps**          |
+| **GitHub Pages**         | ✅                       |    ❌   |           —           | ❌          | Completely free, extremely simple         | Static only                  | **Documentation / websites** |
+
+
 ## 🗄️ Free Database Hosting — 2026
 
 | Service                    | Database                   |   Free storage / quota | ⭐ Pros                                                                   | ⚠️ Cons                                            | Best for                 |
