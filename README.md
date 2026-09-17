@@ -1,6 +1,14 @@
 # 🚀 Free Services for Developers
 
-A comprehensive, curated guide to the best **free-forever** and **generous free-tier** services for building, deploying, and scaling applications in 2026.
+A comprehensive, curated guide to **free-forever**, trial, and generous free-tier services for building, deploying, and scaling applications in 2026.
+
+> **Important:** Free tiers, quotas, eligibility rules, regions, and billing policies change frequently. This guide was last reviewed on **2026-09-17**. Treat every quota as indicative, verify the provider’s current pricing before deploying, and set billing alerts where available. “Free” does not necessarily mean no credit card, no overage charges, or a production SLA.
+
+### Selected official pricing references
+
+- [Fly.io pricing](https://fly.io/docs/about/pricing/) — usage-based billing; legacy plans and trials are subject to separate terms.
+- [Mailgun pricing](https://www.mailgun.com/pricing/) — current free plan allowance and plan conditions.
+- [PlanetScale pricing](https://planetscale.com/pricing) — current database products and paid pricing.
 
 ---
 
@@ -37,7 +45,7 @@ A comprehensive, curated guide to the best **free-forever** and **generous free-
 | **Render** | ✅ 750 hrs/mo | 0.5 CPU | PostgreSQL | 😴 Yes | General SaaS |
 | **Railway** | ⚠️ $1/mo credit | Yes | PostgreSQL | ❌ | Startups |
 | **Koyeb** | ✅ 1 service | 512 MB RAM | ❌ | 😴 Yes | APIs & backends |
-| **Fly.io** | ✅ Generous | Shared CPU | PostgreSQL add-on | ⚡ Yes | Docker apps & full-stack |
+| **Fly.io** | ⚠️ Usage-based/trial | Shared CPU | Self-managed PostgreSQL | ⚡ Yes | Docker apps & full-stack |
 | **Google Cloud Run** | ✅ Free quota | Containers | ❌ | ⚡ Yes | Containerized apps |
 | **Azure Container Apps** | ✅ Free quota | Yes | ❌ | ⚡ Yes | Microsoft ecosystem |
 | **AWS Lambda** | ✅ Free tier | Serverless | DynamoDB | ⚡ Yes | Event-driven apps |
@@ -56,7 +64,7 @@ A comprehensive, curated guide to the best **free-forever** and **generous free-
 |---------|------|-----------|----------------|-----------| 
 | **Supabase** | PostgreSQL | 500 MB | ✅ | Full PostgreSQL + Auth + Realtime |
 | **Neon** | PostgreSQL | 500 MB | ✅ Serverless | Branching + Vercel integration |
-| **PlanetScale** | MySQL | 5 GB | ❌ | MySQL (serverless) |
+| **PlanetScale** | MySQL | Paid plans; verify current offers | ❌ | MySQL (serverless) |
 | **Prisma Postgres** | PostgreSQL | 500 MB | ✅ | TypeScript/Prisma-first |
 | **Nile** | PostgreSQL | 1 GB | ✅ | Multi-tenant SaaS |
 | **CockroachDB** | Distributed SQL | 10 GiB | ✅ | Distributed systems |
@@ -94,8 +102,8 @@ A comprehensive, curated guide to the best **free-forever** and **generous free-
 | **Brevo** | 300/day | SMTP + API | High-volume email |
 | **Amazon SES** | 200/day (first 30 days) | Extremely cheap at scale | Production email |
 | **Mailtrap** | 4,000/mo | Testing + production sandbox | Development |
-| **Mailgun** | Generous free | Powerful API, webhooks | Reliable delivery |
-| **PostMark** | 100/mo | Excellent deliverability | High-importance email |
+| **Mailgun** | 100/day free plan | Powerful API, webhooks | Reliable delivery |
+| **Postmark** | 100/mo | Excellent deliverability | High-importance email |
 | **MailerSend** | 500/mo | Simple API, templates | Quick setup |
 
 ### Email Marketing & Newsletters
