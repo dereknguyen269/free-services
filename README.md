@@ -253,6 +253,19 @@ A comprehensive, curated guide to **free-forever**, trial, and generous free-tie
 | **HubSpot Forms** | ✅ | Unlimited | CRM integration |
 | **Typeform** | Limited | Very limited responses | Beautiful forms |
 
+### Contact & Live Chat Platforms
+
+| Service | Type | Free Tier | Best For | Key Caveat |
+|---------|------|-----------|----------|------------|
+| [tawk.to](https://www.tawk.to/) | Live chat + forms | ✅ Forever; unlimited team members | Website chat with a shared inbox | Branding and advanced services are paid add-ons |
+| [Crisp](https://crisp.chat/en/) | Live chat + contact forms | ✅ Forever; 2 seats, 100 customer profiles | Small teams centralizing chat and form submissions | AI, shared email, and advanced automation require paid plans |
+| [Chatwoot](https://www.chatwoot.com/) | Live chat | ✅ Cloud Hacker; 2 agents, 500 conversations/mo | Basic support inbox or self-hosted customer support | Cloud free plan has 30-day retention and limited channels |
+| [Tidio](https://www.tidio.com/) | Live chat + automation | ✅ Forever; 50 conversations/mo, 10 agents | Small websites needing human chat and basic automation | Chat becomes unavailable after the monthly conversation quota is reached |
+| [Formspree](https://formspree.io/) | Contact forms | ✅; 50 submissions/mo | Hosted forms for static sites without a backend | Free history is retained for only 30 days and is positioned mainly for testing/development |
+| [Fillout](https://www.fillout.com/) | Contact forms + workflows | ✅ Forever; 1,000 responses/mo | Surveys, applications, registrations, and multi-page forms | Free plan includes branding and excludes CAPTCHA, custom domains, and some field types |
+
+Always verify current quotas, retention periods, branding, and overage behavior on the provider’s pricing page before using a service in production.
+
 ### Automation & Integration
 
 | Service | Free Tier | Best For |
@@ -276,8 +289,6 @@ A comprehensive, curated guide to **free-forever**, trial, and generous free-tie
 | **Linkography** | Beacons | ✅ Creator-focused |
 | **Short Links** | Dub | Limited + analytics |
 | **Short Links** | Bitly | Limited |
-| **Live Chat** | Tawk.to | ✅ Generous |
-| **Live Chat** | Crisp | Limited |
 | **Live Chat** | HubSpot Chat | ✅ Free |
 
 ---
