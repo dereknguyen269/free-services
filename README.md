@@ -358,6 +358,52 @@ Always verify current quotas, retention periods, branding, and overage behavior 
 
 ---
 
+## 📋 Best Practices & Use Cases
+
+| Service | Best Use Case | Why | Watch Out |
+|---|---|---|---|
+| **GitHub Pages** | Static docs, portfolios | Git-native deploy, free SSL | No server-side logic |
+| **Vercel** | Next.js / React SSR | Edge network, preview deployments | Serverless cold starts, function limits |
+| **Netlify** | Static sites + serverless functions | Forms, splits testing built-in | Function compute minutes capped |
+| **Cloudflare Pages** | High-traffic static + D1 | Global edge, free Workers/D1 | D1 egress billing above free quota |
+| **Render** | General SaaS backend | Free PostgreSQL + 750 hrs/mo, sleep to zero | Sleeping service warms up on first request |
+| **Koyeb** | APIs / backends | Always-on free instance, global deploy | Limited to 1 service on free plan |
+| **Fly.io** | Docker apps behind a proxy (legacy free tier only) | Self-managed, VM-level control | Pay-as-you-go for new accounts |
+| **Google Cloud Run** | Containerized stateless services | Generous free quota per month | Egress beyond free tier billed |
+| **AWS Lambda** | Event-driven, sporadic workloads | Always-free 1M req/mo | Complexity, cold starts, cost spikes at scale |
+| **Supabase** | Full Postgres + auth + realtime for MVPs | 500 MB, instant auth/realtime | 500 MB storage fills fast |
+| **Neon** | Postgres with branching / dev environments | Serverless, branch like Git, Vercel-native | Compute hours cap per project |
+| **Prisma Postgres** | TypeScript/Prisma-first apps | 500 MB, zero config, branch | Smaller ecosystem than Supabase |
+| **Nile** | Multi-tenant SaaS backends | 1 GB, per-tenant isolation | Smaller community |
+| **CockroachDB** | Distributed, geo-redundant systems | 10 GiB free, ACID distributed SQL | Slower than single-region Postgres |
+| **MongoDB Atlas** | Document stores, quick prototypes | 512 MB shared cluster | No real-time sync, storage cap tight |
+| **Firebase Firestore** | Mobile + web apps with live sync | 1 GiB, realtime listeners | Pricing escalates with reads |
+| **Turso** | Edge-first apps needing SQLite | 5 GB, 500M reads/mo, 100 DBs | Reduced features on free tier (no edge replication) |
+| **Cloudflare D1** | Apps already on Workers | 5 GB, native Workers integration | Egress billed over free tier |
+| **Upstash Redis** | Rate limiting, caching, queues | Serverless, 256 MB free | Command pricing above free quota unpredictable |
+| **Meilisearch / Typesense** | Full-text search for small catalogs | Free on self-host | Needs your own infra |
+| **Resend** | SaaS transactional email with React Email | 3,000/mo, excellent DX | No marketing features |
+| **Brevo** | High-volume email + automation | 300/day, SMTP + API, CRM | Branding on free plan |
+| **Amazon SES** | Production email at low cost | 200/day first 30 days, cheapest at scale | Steep setup, needs reputation management |
+| **Mailgun** | Developer API with webhooks | 100/day, 1 domain | Low daily cap |
+| **Postmark** | High-importance email (password resets, receipts) | 100/mo, best deliverability | Tiny cap, expensive after |
+| **Sentry** | Error tracking + session replay for any stack | 5K errors/mo, full replay | Overages dropped silently on free |
+| **Better Stack** | Logs + uptime monitoring | Generous free logs + uptime checks | Log retention limited |
+| **Grafana Cloud** | Metrics + logs + traces in one | 100% OpenTelemetry | Alerting limited on free |
+| **PostHog** | Product analytics + feature flags + replay | Unlimited-ish events, self-host option | Cloud free has capture limits |
+| **Microsoft Clarity** | Heatmaps + session recordings | Unlimited sessions, free forever | No funnels without paid |
+| **Matomo** | Privacy-first analytics, GDPR-friendly | Self-host, unlimited | You manage hosting/updates |
+| **Google Search Console** | SEO health, indexing issues | Free, direct from Google | Data only for your property |
+| **Buffer / Metricool** | Social scheduling for small teams | Free posts/month, analytics | Post count caps |
+| **Tally** | Unlimited-form lead capture | No form limit, clean UI | Branded on free |
+| **Tawk.to / Crisp** | Live chat for small sites | Forever free, shared inbox | Branding, limited AI on free |
+| **n8n** | Automation, self-hosted | Free on your infra, visual flows | Self-hosting responsibility |
+| **HubSpot CRM** | Small business sales pipeline | Free up to 1,000 contacts | Heavy upsell, data lock-in |
+
+💡 When picking, rank by: (1) real free cap vs your projected usage, (2) sleep/cold-start behavior if latency matters, (3) data egress and overage pricing, (4) how painful migration is if you outgrow it. Set billing alerts on every account with a card attached.
+
+---
+
 ## 📝 Contributing
 
 Found an outdated service or missing tool? **Pull requests welcome!**
