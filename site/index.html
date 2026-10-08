@@ -1,57 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Free Services for Developers — Build for $0</title>
 <meta name="description" content="Opinionated $0 stacks, real free-tier limits, and where you hit the wall. Search 140+ free services for developers." />
+<meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta property="og:title" content="Free Services for Developers — Build for $0" />
+<meta property="og:description" content="Opinionated $0 stacks, real limits, and where you hit the wall. Search 140+ free services." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="./styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Free Services for Developers","description":"Opinionated $0 stacks and real free-tier limits.","url":"https://dereknguyen269.github.io/free-services/"}
+</script>
 </head>
 <body>
-<header class="hero">
-  <div class="wrap">
-    <p class="kicker">🚀 Free Services for Developers</p>
-    <h1>Build and ship your next app for <span class="hl">$0</span></h1>
-    <p class="sub">Opinionated stacks you can copy · real limits, not just a “free” badge · know exactly <em>where you hit the wall</em>.</p>
-    <div class="hero-actions">
-      <input id="q" type="search" placeholder="Search services… (e.g. postgres, resend, vector)" autocomplete="off" aria-label="Search services" />
-      <select id="badgeFilter" aria-label="Filter by badge">
-        <option value="">All badges</option>
-        <option value="🟢">🟢 Free forever</option>
-        <option value="🔵">🔵 Free credits</option>
-        <option value="🟡">🟡 Free trial</option>
-        <option value="💳">💳 Card required</option>
-        <option value="😴">😴 Sleeps / pauses</option>
-        <option value="⚡">⚡ Usage limits</option>
-        <option value="🏠">🏠 Self-hostable</option>
-      </select>
-      <select id="catFilter" aria-label="Filter by category"><option value="">All categories</option></select>
+<a class="skip" href="#catalog">Skip to catalog</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top" aria-label="Free Services home">
+      <span class="brand-mark" aria-hidden="true">🚀</span>
+      <span class="brand-text">Free<span class="brand-accent">Services</span></span>
+      <span class="brand-tag">$0</span>
+    </a>
+    <nav class="topnav" aria-label="Primary">
+      <a href="#stacks">Stacks</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#extras">Checklist</a>
+      <a href="https://github.com/dereknguyen269/free-services" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+    <div class="top-actions">
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+      <a class="btn btn-star" href="https://github.com/dereknguyen269/free-services" target="_blank" rel="noopener" aria-label="Star on GitHub">★ Star</a>
     </div>
-    <p class="warn">⚠️ Free tiers change constantly. Rows marked ⏳ have not been re-verified. Always check the provider’s pricing page before production.</p>
-    <p class="counts"><span id="count"></span></p>
   </div>
 </header>
 
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="kicker"><span class="pulse" aria-hidden="true"></span> Free Services for Developers · updated <span id="updatedAt">2026</span></p>
+      <h1>Build and ship your next app for <span class="hl">$0</span></h1>
+      <p class="sub">Opinionated stacks you can copy · real limits, not just a “free” badge · know exactly <em>where you hit the wall</em>.</p>
+      <div class="hero-stats" id="heroStats" aria-live="polite">
+        <div class="stat"><strong id="statServices">—</strong><span>services</span></div>
+        <div class="stat"><strong id="statStacks">—</strong><span>stacks</span></div>
+        <div class="stat"><strong id="statCats">—</strong><span>categories</span></div>
+        <div class="stat"><strong>100%</strong><span>open data</span></div>
+      </div>
+      <div class="hero-cta">
+        <a href="#stacks" class="btn btn-primary">Pick your $0 stack →</a>
+        <a href="#catalog" class="btn btn-ghost">Browse catalog</a>
+      </div>
+    </div>
+    <div class="hero-card" aria-hidden="true">
+      <div class="terminal">
+        <div class="term-bar"><i></i><i></i><i></i><span>$0 saas stack — copy &amp; ship</span></div>
+<pre class="term-body"><code>Frontend  → Cloudflare Pages
+Backend   → Cloudflare Workers
+Database  → Neon / Supabase
+Auth      → Better Auth
+Storage   → Cloudflare R2
+Email     → Resend
+Analytics → PostHog</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="toolbar-sticky" role="search">
+  <div class="wrap toolbar-in">
+    <div class="search-wrap">
+      <span class="search-ico" aria-hidden="true">⌕</span>
+      <input id="q" type="search" placeholder="Search services… (postgres, resend, vector)" autocomplete="off" aria-label="Search services" />
+      <kbd title="Press / to focus search">/</kbd>
+      <button id="clearQ" class="clear-q hidden" type="button" aria-label="Clear search">✕</button>
+    </div>
+    <select id="badgeFilter" aria-label="Filter by badge">
+      <option value="">All badges</option>
+      <option value="🟢">🟢 Free forever</option>
+      <option value="🔵">🔵 Free credits</option>
+      <option value="🟡">🟡 Free trial</option>
+      <option value="💳">💳 Card required</option>
+      <option value="😴">😴 Sleeps / pauses</option>
+      <option value="⚡">⚡ Usage limits</option>
+      <option value="🏠">🏠 Self-hostable</option>
+    </select>
+    <select id="catFilter" aria-label="Filter by category"><option value="">All categories</option></select>
+    <label class="check-toggle" title="Only services that don't need a card"><input type="checkbox" id="noCard" /> No card</label>
+    <div class="view-toggle" role="group" aria-label="View mode">
+      <button id="viewGrid" type="button" aria-pressed="true" title="Card view">▦</button>
+      <button id="viewTable" type="button" aria-pressed="false" title="Table view">☰</button>
+    </div>
+    <button id="clearAll" class="btn btn-ghost btn-sm" type="button">Reset</button>
+  </div>
+  <div class="wrap"><p class="counts" id="count" aria-live="polite"></p></div>
+</div>
+
 <main class="wrap">
-  <section id="stacks">
-    <h2>🏆 $0 Stacks</h2>
+  <p class="warn">⚠️ Free tiers change constantly. Rows marked ⏳ have not been re-verified. Always check the provider’s pricing page before production.</p>
+
+  <section id="stacks" aria-labelledby="stacksH">
+    <div class="sec-head">
+      <h2 id="stacksH">🏆 $0 Stacks</h2>
+      <div class="sec-actions">
+        <button id="copyStack" class="btn btn-ghost btn-sm" type="button">⧉ Copy stack</button>
+        <button id="copyLink" class="btn btn-ghost btn-sm" type="button">🔗 Copy link</button>
+      </div>
+    </div>
     <p class="muted">Pick what you’re building. Each stack is a starting point — real cost depends on traffic, storage, compute, and API usage.</p>
-    <div id="stackTabs" class="tabs" role="tablist"></div>
-    <article id="stackDetail" class="card"></article>
+    <div id="stackTabs" class="tabs" role="tablist" aria-label="Stacks"></div>
+    <article id="stackDetail" class="card stack-detail" aria-live="polite"></article>
   </section>
 
-  <section id="legend">
-    <h2>🏷️ Legend</h2>
+  <section id="legend" aria-labelledby="legendH">
+    <h2 id="legendH">🏷️ Legend</h2>
     <div id="legendGrid" class="legend"></div>
-    <p class="muted"><strong>“Free” ≠ “free software.”</strong> A hosted free tier costs you nothing. A self-hostable project is free to download, but you pay for the server (<a href="#cat-selfhost">self-host list</a>).</p>
+    <p class="muted small"><strong>“Free” ≠ “free software.”</strong> A hosted free tier costs you nothing. A self-hostable project is free to download, but you pay for the server.</p>
   </section>
 
-  <section id="catalog">
-    <h2>📚 Catalog</h2>
+  <section id="catalog" aria-labelledby="catalogH">
+    <div class="sec-head">
+      <h2 id="catalogH">📚 Catalog</h2>
+      <label class="sort-wrap">Sort
+        <select id="sortSel" aria-label="Sort services">
+          <option value="featured">Featured</option>
+          <option value="az">A → Z</option>
+        </select>
+      </label>
+    </div>
+    <nav id="jumpNav" class="jump" aria-label="Jump to category"></nav>
     <div id="categories"></div>
   </section>
 
-  <section id="extras" class="grid2">
+  <section id="extras" class="grid2" aria-label="Extras">
     <div class="card">
       <h2>🆚 Free Alternatives</h2>
       <div id="alternatives"></div>
@@ -75,6 +162,9 @@
     <p><strong>Build more. Pay less. Ship faster. 🚀</strong></p>
   </footer>
 </main>
+
+<button id="toTop" class="to-top hidden" type="button" aria-label="Back to top">↑</button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 <script src="./app.js"></script>
