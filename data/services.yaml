@@ -1,0 +1,393 @@
+# Source of truth for free-services site + README
+# See ROADMAP.md — README tables should mirror this file.
+meta:
+  updated: "2026-10-08"
+  repo: "https://github.com/dereknguyen269/free-services"
+  pages_url: "https://dereknguyen269.github.io/free-services/"
+
+legend:
+  - { badge: "🟢", meaning: "Free forever (no expiry)" }
+  - { badge: "🔵", meaning: "Free credits (runs out)" }
+  - { badge: "🟡", meaning: "Free trial (time-limited)" }
+  - { badge: "💳", meaning: "Credit card required" }
+  - { badge: "😴", meaning: "Sleeps / pauses when inactive" }
+  - { badge: "⚡", meaning: "Usage or rate limits" }
+  - { badge: "🏠", meaning: "Self-hostable" }
+  - { badge: "💰", meaning: "Transaction fees" }
+  - { badge: "⏳", meaning: "Not yet re-verified" }
+
+stacks:
+  - id: saas
+    emoji: "🚀"
+    name: "$0 SaaS Stack"
+    who_for: "SaaS / startup MVP"
+    components:
+      - { layer: "Frontend", pick: "Cloudflare Pages (or Vercel for Next.js, non-commercial only)" }
+      - { layer: "Backend", pick: "Cloudflare Workers" }
+      - { layer: "Database", pick: "Neon or Supabase (Postgres)" }
+      - { layer: "Auth", pick: "Better Auth or Supabase Auth" }
+      - { layer: "Storage", pick: "Cloudflare R2" }
+      - { layer: "Email", pick: "Resend" }
+      - { layer: "Analytics", pick: "PostHog" }
+      - { layer: "Monitoring", pick: "Sentry" }
+      - { layer: "Payments", pick: "Stripe" }
+      - { layer: "DNS / CDN", pick: "Cloudflare" }
+      - { layer: "Code + CI", pick: "GitHub + GitHub Actions" }
+    walls:
+      - "Workers + Postgres: use Cloudflare Hyperdrive (or a pooled connection string) or you will exhaust database connections."
+      - "Supabase free projects pause after about a week of inactivity. Fine for dev, risky for production."
+      - "Vercel's free Hobby plan is for non-commercial use. A paying SaaS needs Pro or a different host."
+      - "Resend's free plan has a daily send cap that password-reset spikes can hit."
+  - id: ai
+    emoji: "🤖"
+    name: "$0 AI Stack"
+    who_for: "AI app"
+    components:
+      - { layer: "Frontend", pick: "Cloudflare Pages" }
+      - { layer: "Backend", pick: "Cloudflare Workers" }
+      - { layer: "LLM", pick: "Gemini / Groq / Cerebras (rate-limited free tiers)" }
+      - { layer: "Embeddings", pick: "Cloudflare Workers AI or Gemini" }
+      - { layer: "Vector DB", pick: "Supabase pgvector (or Cloudflare Vectorize)" }
+      - { layer: "Database", pick: "Supabase / Neon" }
+      - { layer: "Email", pick: "Resend" }
+      - { layer: "Analytics", pick: "PostHog" }
+      - { layer: "Monitoring", pick: "Sentry" }
+    walls:
+      - "Free LLM tiers are rate-limited (requests per minute and per day) and often allow providers to use your prompts for training. Do not send sensitive user data. Add a provider fallback (e.g. Groq → Gemini → OpenRouter) before launch."
+  - id: static
+    emoji: "🌐"
+    name: "$0 Static Site Stack"
+    who_for: "Static site / docs"
+    components:
+      - { layer: "Hosting", pick: "Cloudflare Pages / GitHub Pages" }
+      - { layer: "DNS", pick: "Cloudflare" }
+      - { layer: "Analytics", pick: "Cloudflare Web Analytics / Umami Cloud" }
+      - { layer: "Forms", pick: "Tally / Formspree" }
+    walls:
+      - "Almost nowhere. Build-minute limits are the first thing you will notice on large sites."
+  - id: api
+    emoji: "🔌"
+    name: "$0 API Stack"
+    who_for: "API / backend"
+    components:
+      - { layer: "Runtime", pick: "Cloudflare Workers / Render / Koyeb" }
+      - { layer: "Database", pick: "Neon / Supabase" }
+      - { layer: "Cache", pick: "Upstash Redis" }
+      - { layer: "Monitoring", pick: "Sentry + UptimeRobot" }
+      - { layer: "Email", pick: "Resend" }
+    walls:
+      - "Render's free web service sleeps after idle (cold starts of tens of seconds), and Workers have a CPU time limit per request. Both are fine for prototypes, not for latency-sensitive production."
+  - id: mobile
+    emoji: "📱"
+    name: "$0 Mobile Stack"
+    who_for: "Mobile app"
+    components:
+      - { layer: "App", pick: "Expo (React Native) or Flutter" }
+      - { layer: "Backend + DB", pick: "Supabase or Firebase" }
+      - { layer: "Auth", pick: "Supabase Auth / Firebase Auth" }
+      - { layer: "Push", pick: "Firebase Cloud Messaging" }
+      - { layer: "Storage", pick: "Supabase Storage / Cloudflare R2" }
+      - { layer: "Crash reports", pick: "Sentry / Firebase Crashlytics" }
+    walls:
+      - "The stores, not the infrastructure. Apple Developer ($99/year) and Google Play ($25 one-time) are unavoidable for publishing."
+  - id: side
+    emoji: "🧑‍💻"
+    name: "$0 Side Project Stack"
+    who_for: "Side project — lowest setup, no card on file"
+    components:
+      - { layer: "Hosting", pick: "Cloudflare Pages + Workers" }
+      - { layer: "Database", pick: "Turso (SQLite) or Neon" }
+      - { layer: "Auth", pick: "Better Auth" }
+      - { layer: "Analytics", pick: "Umami Cloud / Cloudflare Web Analytics" }
+      - { layer: "Uptime", pick: "UptimeRobot" }
+    walls:
+      - "Optimized for lowest setup effort and no card on file, so a forgotten project cannot surprise you with a bill."
+  - id: oss
+    emoji: "🐙"
+    name: "$0 Open Source Stack"
+    who_for: "Open source project"
+    components:
+      - { layer: "Code + Issues", pick: "GitHub" }
+      - { layer: "CI/CD", pick: "GitHub Actions (free for public repos)" }
+      - { layer: "Docs", pick: "GitHub Pages / Cloudflare Pages" }
+      - { layer: "Packages", pick: "npm / GitHub Packages / GHCR" }
+      - { layer: "Security", pick: "GitHub code scanning + Dependabot (free for public repos)" }
+      - { layer: "Dev env", pick: "GitHub Codespaces (monthly free hours)" }
+      - { layer: "Community", pick: "GitHub Discussions" }
+    walls:
+      - "Many paid tools offer free plans for open source projects. Always check each vendor's open-source program before paying."
+
+categories:
+  - id: hosting
+    emoji: "☁️"
+    name: "Hosting"
+    services:
+      - { name: "Cloudflare Pages", url: "https://pages.cloudflare.com/", type: "Static / full-stack", free: "🟢", limits: "Unlimited bandwidth, limited builds per month", card: false, verified: "⏳" }
+      - { name: "Cloudflare Workers", url: "https://workers.cloudflare.com/", type: "Serverless / edge", free: "🟢⚡", limits: "~100k requests/day, short CPU time per request", card: false, verified: "⏳" }
+      - { name: "Vercel", url: "https://vercel.com/", type: "Frontend", free: "🟢⚡", limits: "Hobby plan is non-commercial only; bandwidth and function limits", card: false, verified: "⏳" }
+      - { name: "Netlify", url: "https://www.netlify.com/", type: "Frontend", free: "🟢⚡", limits: "Credit-based free plan covering builds, bandwidth, functions", card: false, verified: "⏳" }
+      - { name: "Render", url: "https://render.com/", type: "App hosting", free: "🟢😴", limits: "Free web services sleep when idle; free Postgres expires", card: false, verified: "⏳" }
+      - { name: "Koyeb", url: "https://www.koyeb.com/", type: "Containers", free: "🟢⚡", limits: "One small free instance", card: "varies", verified: "⏳" }
+      - { name: "GitHub Pages", url: "https://pages.github.com/", type: "Static", free: "🟢", limits: "Small site size cap, soft bandwidth cap, no server code", card: false, verified: "⏳" }
+      - { name: "Deno Deploy", url: "https://deno.com/deploy", type: "Serverless", free: "🟢⚡", limits: "Request and bandwidth limits", card: false, verified: "⏳" }
+      - { name: "Google Cloud Run", url: "https://cloud.google.com/run", type: "Containers", free: "🟢⚡💳", limits: "Monthly free request and compute allowance", card: true, verified: "⏳" }
+      - { name: "Railway", url: "https://railway.com/", type: "Cloud", free: "🔵", limits: "Trial credits, then paid", card: true, verified: "⏳" }
+      - { name: "Fly.io", url: "https://fly.io/", type: "Cloud", free: "🔵", limits: "Pay-as-you-go for new accounts, no standing free plan", card: true, verified: "⏳" }
+  - id: databases
+    emoji: "💾"
+    name: "Databases"
+    services:
+      - { name: "Supabase", url: "https://supabase.com/", type: "PostgreSQL", free: "🟢😴", limits: "~500 MB DB, limited active projects", notes: "Pauses after about a week idle", verified: "⏳" }
+      - { name: "Neon", url: "https://neon.tech/", type: "PostgreSQL", free: "🟢😴", limits: "~0.5 GB per project", notes: "Scales to zero, cold start on first query", verified: "⏳" }
+      - { name: "Aiven", url: "https://aiven.io/", type: "PostgreSQL / MySQL / Valkey", free: "🟢⚡", limits: "Single small node", notes: "Good for learning", verified: "⏳" }
+      - { name: "CockroachDB", url: "https://www.cockroachlabs.com/", type: "Distributed SQL", free: "🟢⚡", limits: "Free Basic tier with monthly usage allowance", notes: "Postgres-compatible", verified: "⏳" }
+      - { name: "Nile", url: "https://www.thenile.dev/", type: "PostgreSQL", free: "🟢⚡", limits: "Free tier for multi-tenant apps", notes: "Tenant-aware Postgres", verified: "⏳" }
+      - { name: "Turso", url: "https://turso.tech/", type: "SQLite (libSQL)", free: "🟢⚡", limits: "Several GB storage, monthly row read/write caps", notes: "Great with Workers", verified: "⏳" }
+      - { name: "MongoDB Atlas", url: "https://www.mongodb.com/atlas", type: "MongoDB", free: "🟢⚡", limits: "M0 cluster, ~512 MB", notes: "Shared cluster, connection caps", verified: "⏳" }
+      - { name: "Firebase", url: "https://firebase.google.com/", type: "Firestore / RTDB", free: "🟢⚡", limits: "Spark plan, daily read/write caps", notes: "File Storage may require the paid plan", verified: "⏳" }
+  - id: auth
+    emoji: "🔐"
+    name: "Authentication"
+    services:
+      - { name: "Supabase Auth", url: "https://supabase.com/auth", free: "🟢", limits: "Tens of thousands of MAU on the free plan", notes: "Tied to Supabase", verified: "⏳" }
+      - { name: "Firebase Authentication", url: "https://firebase.google.com/products/auth", free: "🟢", limits: "Generous MAU on the basic plan", notes: "Phone auth is metered", verified: "⏳" }
+      - { name: "Clerk", url: "https://clerk.com/", free: "🟢⚡", limits: "~10k MAU", notes: "Hosted UI components", verified: "⏳" }
+      - { name: "Auth0", url: "https://auth0.com/", free: "🟢⚡", limits: "Tens of thousands of MAU", notes: "Feature-limited free plan", verified: "⏳" }
+      - { name: "Better Auth", url: "https://www.better-auth.com/", free: "🟢🏠", limits: "Library, no MAU limit", notes: "You own the data and the database", verified: "⏳" }
+      - { name: "Auth.js", url: "https://authjs.dev/", free: "🟢🏠", limits: "Library, no MAU limit", notes: "Self-managed", verified: "⏳" }
+  - id: storage
+    emoji: "📦"
+    name: "Storage"
+    services:
+      - { name: "Cloudflare R2", url: "https://www.cloudflare.com/developer-platform/r2/", free: "🟢⚡", limits: "~10 GB storage, zero egress fees", notes: "S3-compatible", verified: "⏳" }
+      - { name: "Supabase Storage", url: "https://supabase.com/storage", free: "🟢⚡", limits: "~1 GB on the free plan", notes: "Tied to Supabase", verified: "⏳" }
+      - { name: "Firebase Storage", url: "https://firebase.google.com/products/storage", free: "⚡💳", limits: "Requires the paid plan for new projects", notes: "Check current terms", verified: "⏳" }
+      - { name: "Backblaze B2", url: "https://www.backblaze.com/cloud-storage", free: "🟢⚡", limits: "~10 GB free", notes: "S3-compatible", verified: "⏳" }
+      - { name: "Cloudinary", url: "https://cloudinary.com/", free: "🟢⚡", limits: "Monthly credit allowance", notes: "Image/video transforms", verified: "⏳" }
+  - id: email
+    emoji: "📧"
+    name: "Email"
+    services:
+      - { name: "Resend", url: "https://resend.com/", free: "🟢⚡", limits: "A few thousand emails/month, daily cap", notes: "Best developer experience", verified: "⏳" }
+      - { name: "Brevo", url: "https://www.brevo.com/", free: "🟢⚡", limits: "Daily send cap", notes: "Includes marketing email", verified: "⏳" }
+      - { name: "Mailgun", url: "https://www.mailgun.com/", free: "🟢⚡", limits: "Small daily cap", notes: "Check current free plan", verified: "⏳" }
+      - { name: "Amazon SES", url: "https://aws.amazon.com/ses/", free: "🔵", limits: "New-account credit model", notes: "Cheapest at scale", verified: "⏳" }
+      - { name: "Loops", url: "https://loops.so/", free: "🟢⚡", limits: "Limited contacts", notes: "Product and marketing email", verified: "⏳" }
+  - id: ai-llm
+    emoji: "🤖"
+    name: "AI & LLM"
+    subgroups:
+      - name: "LLM APIs"
+        services:
+          - { name: "Google Gemini", url: "https://ai.google.dev/", free: "🟢⚡", limits: "Per-minute and per-day request caps", notes: "Free-tier data may be used for training", verified: "⏳" }
+          - { name: "Groq", url: "https://groq.com/", free: "🟢⚡", limits: "Rate limits per model", notes: "Very fast, open models", verified: "⏳" }
+          - { name: "Cerebras", url: "https://www.cerebras.ai/", free: "🟢⚡", limits: "Rate limits per model", notes: "Open models", verified: "⏳" }
+          - { name: "Mistral AI", url: "https://mistral.ai/", free: "🟢⚡", limits: "Experiment tier with rate limits", notes: "Data-sharing terms apply", verified: "⏳" }
+          - { name: "OpenRouter", url: "https://openrouter.ai/", free: "🟢⚡", limits: "Free models, low daily request cap", notes: "Models come and go", verified: "⏳" }
+          - { name: "Hugging Face", url: "https://huggingface.co/", free: "🟢⚡", limits: "Monthly inference credits", notes: "Cold starts on small models", verified: "⏳" }
+          - { name: "GitHub Models", url: "https://github.com/marketplace/models", free: "🟢⚡", limits: "Rate-limited prototyping access", notes: "For prototyping only", verified: "⏳" }
+          - { name: "Cloudflare Workers AI", url: "https://developers.cloudflare.com/workers-ai/", free: "🟢⚡", limits: "Daily free allowance", notes: "Runs next to your Worker", verified: "⏳" }
+      - name: "Notebooks & Compute"
+        services:
+          - { name: "Google Colab", url: "https://colab.research.google.com/", limits: "free GPU/TPU sessions, time-limited", verified: "⏳" }
+          - { name: "Kaggle", url: "https://www.kaggle.com/", limits: "weekly free GPU hours", verified: "⏳" }
+          - { name: "Lightning AI", url: "https://lightning.ai/", limits: "monthly free credits", verified: "⏳" }
+      - name: "Vector Databases"
+        services:
+          - { name: "Supabase pgvector", url: "https://supabase.com/docs/guides/ai", limits: "runs inside your free Postgres", verified: "⏳" }
+          - { name: "Cloudflare Vectorize", url: "https://developers.cloudflare.com/vectorize/", limits: "pairs with Workers", verified: "⏳" }
+          - { name: "Qdrant Cloud", url: "https://qdrant.tech/", limits: "small free cluster", verified: "⏳" }
+          - { name: "Pinecone", url: "https://www.pinecone.io/", limits: "free starter plan", verified: "⏳" }
+          - { name: "Weaviate", url: "https://weaviate.io/", limits: "sandbox / trial clusters", verified: "⏳" }
+          - { name: "Chroma", url: "https://www.trychroma.com/", limits: "open source, self-host or cloud", verified: "⏳" }
+      - name: "Speech"
+        services:
+          - { name: "Deepgram", url: "https://deepgram.com/", limits: "free credits", verified: "⏳" }
+          - { name: "ElevenLabs", url: "https://elevenlabs.io/", limits: "small monthly free allowance", verified: "⏳" }
+          - { name: "Whisper", url: "https://github.com/openai/whisper", limits: "open-source model, you supply the compute", verified: "⏳" }
+      - name: "Image Generation"
+        services:
+          - { name: "Replicate", url: "https://replicate.com/", limits: "pay per run, small trial credit", verified: "⏳" }
+          - { name: "Hugging Face Spaces", url: "https://huggingface.co/spaces", limits: "community demos", verified: "⏳" }
+          - { name: "Cloudflare Workers AI", url: "https://developers.cloudflare.com/workers-ai/", limits: "image models with the daily allowance", verified: "⏳" }
+  - id: analytics
+    emoji: "📊"
+    name: "Analytics"
+    services:
+      - { name: "PostHog", url: "https://posthog.com/", free: "🟢⚡", limits: "~1M events/month", notes: "Product analytics, replays, flags", verified: "⏳" }
+      - { name: "Umami Cloud", url: "https://umami.is/", free: "🟢⚡", limits: "Monthly event cap", notes: "Privacy-friendly, also self-hostable", verified: "⏳" }
+      - { name: "Google Analytics", url: "https://analytics.google.com/", free: "🟢", limits: "Generous", notes: "Privacy and consent obligations apply", verified: "⏳" }
+      - { name: "Cloudflare Web Analytics", url: "https://www.cloudflare.com/web-analytics/", free: "🟢", limits: "Free", notes: "Basic, cookie-less", verified: "⏳" }
+  - id: monitoring
+    emoji: "🐛"
+    name: "Monitoring & Error Tracking"
+    services:
+      - { name: "Sentry", url: "https://sentry.io/", free: "🟢⚡", limits: "A few thousand errors/month", notes: "Single user on free plan", verified: "⏳" }
+      - { name: "Better Stack", url: "https://betterstack.com/", free: "🟢⚡", limits: "Limited monitors, short retention", notes: "Uptime + logs", verified: "⏳" }
+      - { name: "UptimeRobot", url: "https://uptimerobot.com/", free: "🟢⚡", limits: "~50 monitors, 5-minute interval", notes: "Non-commercial terms, check", verified: "⏳" }
+      - { name: "Grafana Cloud", url: "https://grafana.com/", free: "🟢⚡", limits: "Metrics, logs, traces allowance", notes: "Good all-in-one observability", verified: "⏳" }
+  - id: search
+    emoji: "🔍"
+    name: "Search"
+    services:
+      - { name: "Algolia", url: "https://www.algolia.com/", free: "🟢⚡", limits: "Monthly search request and record caps", notes: "Best hosted search UX", verified: "⏳" }
+      - { name: "Tavily", url: "https://tavily.com/", free: "🟢⚡", limits: "Monthly credit allowance", notes: "Search API for AI agents", verified: "⏳" }
+  - id: cache-queues
+    emoji: "⚡"
+    name: "Cache & Queues"
+    services:
+      - { name: "Upstash Redis", url: "https://upstash.com/", free: "🟢⚡", limits: "Monthly command cap", notes: "HTTP API, works from Workers", verified: "⏳" }
+      - { name: "Upstash Kafka / QStash", url: "https://upstash.com/", free: "🟢⚡", limits: "Small monthly allowance", notes: "Serverless messaging", verified: "⏳" }
+      - { name: "Cloudflare KV", url: "https://developers.cloudflare.com/kv/", free: "🟢⚡", limits: "Daily read/write caps", notes: "Eventually consistent", verified: "⏳" }
+      - { name: "Cloudflare Queues", url: "https://developers.cloudflare.com/queues/", free: "🟢⚡", limits: "Free-tier operations", notes: "Workers only", verified: "⏳" }
+  - id: domains
+    emoji: "🌐"
+    name: "Domains, DNS & CDN"
+    note: "A real domain is never free. Budget about $10/year. Free subdomains (*.pages.dev, *.workers.dev, *.vercel.app) work for prototypes."
+    services:
+      - { name: "Cloudflare DNS + CDN", url: "https://www.cloudflare.com/", free: "🟢", limits: "DNS, CDN, basic DDoS protection", verified: "⏳" }
+      - { name: "Cloudflare Registrar", url: "https://www.cloudflare.com/products/registrar/", free: "💳", limits: "Domains at wholesale cost, no markup", verified: "⏳" }
+      - { name: "Bunny.net", url: "https://bunny.net/", free: "🟡", limits: "Trial, then cheap pay-as-you-go CDN", verified: "⏳" }
+      - { name: "AWS CloudFront", url: "https://aws.amazon.com/cloudfront/", free: "🔵", limits: "New-account credit model", verified: "⏳" }
+  - id: security
+    emoji: "🔒"
+    name: "Security"
+    services:
+      - { name: "Cloudflare", url: "https://www.cloudflare.com/", free: "🟢", limits: "WAF basics, DDoS, bot protection (free tier)", verified: "⏳" }
+      - { name: "Snyk", url: "https://snyk.io/", free: "🟢⚡", limits: "Limited scans/month on free plan", verified: "⏳" }
+      - { name: "GitHub code scanning + Dependabot", url: "https://github.com/security/advanced-security", free: "🟢", limits: "Free for public repos only", verified: "⏳" }
+      - { name: "Socket", url: "https://socket.dev/", free: "🟢⚡", limits: "Dependency supply-chain scanning", verified: "⏳" }
+  - id: devtools
+    emoji: "🧑‍💻"
+    name: "Developer Tools"
+    subgroups:
+      - name: "Code Hosting"
+        services:
+          - { name: "GitHub", url: "https://github.com/" }
+          - { name: "GitLab", url: "https://gitlab.com/" }
+          - { name: "Bitbucket", url: "https://bitbucket.org/" }
+      - name: "CI/CD"
+        services:
+          - { name: "GitHub Actions", url: "https://github.com/features/actions", limits: "free for public repos, monthly minutes for private" }
+          - { name: "GitLab CI/CD", url: "https://docs.gitlab.com/ee/ci/", limits: "monthly compute minutes" }
+          - { name: "CircleCI", url: "https://circleci.com/", limits: "monthly credits" }
+          - { name: "Buildkite", url: "https://buildkite.com/", limits: "free tier for small teams" }
+      - name: "Package Registries"
+        services:
+          - { name: "npm", url: "https://www.npmjs.com/" }
+          - { name: "GitHub Packages", url: "https://github.com/features/packages" }
+          - { name: "Docker Hub", url: "https://hub.docker.com/", limits: "limited pulls and private repos on free plan" }
+          - { name: "GitHub Container Registry", url: "https://ghcr.io/" }
+      - name: "Containers"
+        services:
+          - { name: "GitLab Container Registry", url: "https://docs.gitlab.com/ee/user/packages/container_registry/" }
+          - { name: "Google Artifact Registry", url: "https://cloud.google.com/artifact-registry", limits: "small free storage allowance" }
+          - { name: "Amazon ECR", url: "https://aws.amazon.com/ecr/", limits: "small free allowance for new accounts" }
+      - name: "Development Environments"
+        services:
+          - { name: "GitHub Codespaces", url: "https://github.com/features/codespaces", limits: "monthly free hours" }
+          - { name: "StackBlitz", url: "https://stackblitz.com/" }
+          - { name: "CodeSandbox", url: "https://codesandbox.io/" }
+          - { name: "Replit", url: "https://replit.com/", limits: "heavily limited free plan" }
+  - id: mobile
+    emoji: "📱"
+    name: "Mobile"
+    services:
+      - { name: "Expo", url: "https://expo.dev/", limits: "free tier for builds and updates, limited build queue" }
+      - { name: "React Native", url: "https://reactnative.dev/", limits: "open source" }
+      - { name: "Flutter", url: "https://flutter.dev/", limits: "open source" }
+      - { name: "Firebase", url: "https://firebase.google.com/", limits: "Auth, Firestore, FCM, Crashlytics" }
+      - { name: "Supabase", url: "https://supabase.com/", limits: "Postgres, Auth, Storage, Realtime" }
+  - id: design
+    emoji: "🎨"
+    name: "Design"
+    services:
+      - { name: "Figma", url: "https://www.figma.com/", limits: "free starter plan" }
+      - { name: "Canva", url: "https://www.canva.com/", limits: "free plan" }
+      - { name: "Excalidraw", url: "https://excalidraw.com/", limits: "free, open source" }
+      - { name: "Lucide", url: "https://lucide.dev/", limits: "open-source icons" }
+      - { name: "Unsplash", url: "https://unsplash.com/", limits: "free photos (check license for your use)" }
+      - { name: "Pexels", url: "https://www.pexels.com/", limits: "free photos and video" }
+  - id: payments
+    emoji: "💳"
+    name: "Payments"
+    note: '"Free" here means no mandatory monthly platform fee, not free transactions.'
+    services:
+      - { name: "Stripe", url: "https://stripe.com/", limits: "per transaction", notes: "No monthly fee; you are the merchant" }
+      - { name: "Lemon Squeezy", url: "https://www.lemonsqueezy.com/", limits: "per transaction", notes: "Merchant of record (handles global tax)" }
+      - { name: "Paddle", url: "https://www.paddle.com/", limits: "per transaction", notes: "Merchant of record" }
+      - { name: "Creem", url: "https://www.creem.io/", limits: "per transaction", notes: "Merchant of record" }
+  - id: marketing
+    emoji: "📣"
+    name: "Marketing & Launch"
+    services:
+      - { name: "Product Hunt", url: "https://www.producthunt.com/" }
+      - { name: "Indie Hackers", url: "https://www.indiehackers.com/" }
+      - { name: "Reddit", url: "https://www.reddit.com/" }
+      - { name: "X", url: "https://x.com/" }
+      - { name: "LinkedIn", url: "https://www.linkedin.com/" }
+      - { name: "Beehiiv", url: "https://www.beehiiv.com/", limits: "newsletters, free up to a subscriber cap" }
+      - { name: "Kit (ConvertKit)", url: "https://kit.com/", limits: "newsletters, free up to a subscriber cap" }
+  - id: forms
+    emoji: "📨"
+    name: "Forms & Feedback"
+    services:
+      - { name: "Tally", url: "https://tally.so/", limits: "generous free plan" }
+      - { name: "Google Forms", url: "https://forms.google.com/" }
+      - { name: "Microsoft Forms", url: "https://forms.office.com/" }
+      - { name: "Formspree", url: "https://formspree.io/", limits: "small monthly submission cap" }
+      - { name: "Typeform", url: "https://www.typeform.com/", limits: "very limited free plan" }
+  - id: automation
+    emoji: "🔄"
+    name: "Automation"
+    services:
+      - { name: "n8n", url: "https://n8n.io/", limits: "free if self-hosted, paid cloud" }
+      - { name: "Make", url: "https://www.make.com/", limits: "free plan with monthly operation cap" }
+      - { name: "Zapier", url: "https://zapier.com/", limits: "very limited free plan" }
+      - { name: "Pipedream", url: "https://pipedream.com/", limits: "free credits for workflows" }
+      - { name: "GitHub Actions", url: "https://github.com/features/actions", limits: "scheduled workflows are a free cron" }
+  - id: selfhost
+    emoji: "🏠"
+    name: "Self-Host Only (Free Software, Not Free Hosting)"
+    note: "These cost $0 to download but need a server. A small VPS or a home server typically costs a few dollars a month."
+    services:
+      - { name: "Meilisearch", url: "https://www.meilisearch.com/", limits: "Fast, simple search", notes: "Replaces Algolia" }
+      - { name: "Typesense", url: "https://typesense.org/", limits: "Typo-tolerant search", notes: "Replaces Algolia" }
+      - { name: "OpenSearch", url: "https://opensearch.org/", limits: "Heavy on RAM", notes: "Replaces Elasticsearch" }
+      - { name: "GlitchTip", url: "https://glitchtip.com/", limits: "Sentry-SDK compatible", notes: "Replaces Sentry" }
+      - { name: "SigNoz", url: "https://signoz.io/", limits: "OpenTelemetry-native", notes: "Replaces Datadog / Sentry" }
+      - { name: "Plausible", url: "https://plausible.io/", limits: "Hosted version is paid", notes: "Replaces Google Analytics" }
+      - { name: "Umami", url: "https://umami.is/", limits: "Hosted free tier also exists", notes: "Replaces Google Analytics" }
+      - { name: "RabbitMQ", url: "https://www.rabbitmq.com/", limits: "Message broker", notes: "Replaces cloud queues" }
+      - { name: "Valkey", url: "https://valkey.io/", limits: "Open-source Redis fork", notes: "Replaces Redis" }
+      - { name: "n8n", url: "https://n8n.io/", limits: "Workflow automation", notes: "Replaces Zapier" }
+      - { name: "Appwrite", url: "https://appwrite.io/", limits: "Backend-as-a-service", notes: "Replaces Firebase" }
+
+alternatives:
+  - { popular: "Vercel", free: "Cloudflare Pages, Netlify" }
+  - { popular: "Supabase", free: "Neon, Firebase, Appwrite (self-host)" }
+  - { popular: "Firebase", free: "Supabase, Appwrite" }
+  - { popular: "Redis", free: "Upstash, Valkey (self-host)" }
+  - { popular: "Sentry", free: "GlitchTip, SigNoz (self-host)" }
+  - { popular: "Algolia", free: "Meilisearch, Typesense (self-host)" }
+  - { popular: "AWS", free: "Cloudflare, Render, Koyeb" }
+  - { popular: "Stripe", free: "Lemon Squeezy, Paddle, Creem (merchant of record)" }
+  - { popular: "Heroku", free: "Render, Koyeb, Railway (credits)" }
+  - { popular: "OpenAI API", free: "Gemini, Groq, Cerebras, Mistral" }
+  - { popular: "Google Analytics", free: "PostHog, Umami, Cloudflare Web Analytics" }
+
+checklist:
+  - "Domain (~$10/year, not free)"
+  - "DNS / CDN"
+  - "Frontend"
+  - "Backend"
+  - "Database"
+  - "Authentication"
+  - "File storage"
+  - "Email"
+  - "Analytics"
+  - "Error tracking"
+  - "Uptime monitoring"
+  - "Payments"
+  - "CI/CD"
+  - "AI (if needed)"

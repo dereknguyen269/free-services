@@ -10,6 +10,8 @@ Most "free tools" lists are bare link dumps. This one is different:
 
 > ⚠️ Free tiers change constantly. Rows marked ⏳ have not been re-verified recently. Always check the provider's pricing page before relying on a service in production.
 
+> 🌐 **Prefer browsing?** Interactive searchable version: `https://dereknguyen269.github.io/free-services/` (data: [`data/services.yaml`](data/services.yaml)).
+
 ---
 
 ## 🧭 Jump To
