@@ -1,421 +1,579 @@
 # 🚀 Free Services for Developers
 
-A comprehensive, curated guide to **free-forever**, trial, and generous free-tier services for building, deploying, and scaling applications in 2026.
+> **Build and ship your next app for $0, and know exactly when you'll have to start paying.**
 
-> **Important:** Free tiers, quotas, eligibility rules, regions, and billing policies change frequently. This guide was last reviewed on **2026-10-07**. Treat every quota as indicative, verify the provider’s current pricing before deploying, and set billing alerts where available. “Free” does not necessarily mean no credit card, no overage charges, or a production SLA.
+Most "free tools" lists are bare link dumps. This one is different:
 
-### Selected official pricing references
+* **Opinionated $0 stacks** you can copy
+* **Real limits** for every service, not just a "free" badge
+* **"Where you hit the wall"**: what breaks first and what the next tier costs
 
-- [Fly.io pricing](https://fly.io/docs/about/pricing/) — usage-based billing; legacy plans and trials are subject to separate terms.
-- [Mailgun pricing](https://www.mailgun.com/pricing/) — current free plan allowance and plan conditions.
-- [PlanetScale pricing](https://planetscale.com/pricing) — current database products and paid pricing.
-
----
-
-## 📑 Quick Navigation
-
-| Category | Services |
-|----------|----------|
-| 🏠 **Hosting** | Web apps, containers, serverless |
-| 💾 **Databases** | PostgreSQL, MongoDB, Redis, SQLite |
-| 📧 **Email** | Transactional & marketing |
-| 🐛 **Monitoring** | Errors, performance, logs, APM |
-| 🤖 **AI/LLM** | APIs & chat interfaces |
-| 📊 **Analytics** | User tracking & product insights |
-| 📣 **Marketing** | Email, SEO, forms, content, automation |
+> ⚠️ Free tiers change constantly. Rows marked ⏳ have not been re-verified recently. Always check the provider's pricing page before relying on a service in production.
 
 ---
 
-## 🏠 Hosting & Deployment
+## 🧭 Jump To
 
-### Frontend Hosting
+| What are you building? | Start here |
+| ---------------------- | ---------- |
+| 🚀 SaaS / startup MVP | [$0 SaaS Stack](#-0-saas-stack) |
+| 🤖 AI app | [$0 AI Stack](#-0-ai-stack) |
+| 🌐 Static site / docs | [$0 Static Site Stack](#-0-static-site-stack) |
+| 🔌 API / backend | [$0 API Stack](#-0-api-stack) |
+| 📱 Mobile app | [$0 Mobile Stack](#-0-mobile-stack) |
+| 🧑‍💻 Side project | [$0 Side Project Stack](#-0-side-project-stack) |
+| 🐙 Open source project | [$0 Open Source Stack](#-0-open-source-stack) |
 
-| Service | Free Tier | Best For | Key Feature |
-|---------|-----------|----------|------------|
-| **GitHub Pages** | ✅ Unlimited | Documentation, static sites | Git-native, no setup |
-| **Vercel** | ✅ Hobby | Next.js, React | Edge network, serverless |
-| **Netlify** | ✅ Free | Static + functions | Git deploy, forms |
-| **Cloudflare Pages** | ✅ Unlimited | Speed-focused | Global CDN, D1 database |
-
-### Backend & Full-Stack Hosting
-
-| Service | Free Tier | Compute | Database | Sleep/Scale-to-Zero | Best For |
-|---------|-----------|---------|----------|---------------------|----------|
-| **Vercel** | ✅ Hobby | Serverless | ❌ | ⚡ Yes | Full-stack Next.js & React |
-| **Render** | ✅ 750 hrs/mo | 0.5 CPU | PostgreSQL | 😴 Yes | General SaaS |
-|| **Railway** | 🔴 30-day trial only ($5 credits) | Yes | PostgreSQL | ❌ | Startups |
-| **Koyeb** | ✅ 1 service | 512 MB RAM | ❌ | 😴 Yes | APIs & backends |
-|| **Fly.io** | ❌ No free tier (legacy accounts only) | Shared CPU | Self-managed PostgreSQL | ⚡ Yes | Docker apps & full-stack |
-| **Google Cloud Run** | ✅ Free quota | Containers | ❌ | ⚡ Yes | Containerized apps |
-| **Azure Container Apps** | ✅ Free quota | Yes | ❌ | ⚡ Yes | Microsoft ecosystem |
-| **AWS Lambda** | ✅ Free tier | Serverless | DynamoDB | ⚡ Yes | Event-driven apps |
-| **Firebase Hosting** | ✅ Free | Limited backend | Firebase | — | Web/mobile apps |
-| **Oracle Cloud** | ✅ Always Free | Powerful VMs | MySQL/PostgreSQL | ❌ | Self-hosting |
-| **Zeabur** | ⚠️ Limited | Docker | PostgreSQL | Varies | Side projects |
-|| **Northflank** | ✅ Free (2 services, 2 jobs, 1 addon) | Kubernetes | PostgreSQL | ⚡ Yes | Docker/Kubernetes |
+Or browse by category: [Hosting](#-hosting) · [Databases](#-databases) · [Auth](#-authentication) · [Storage](#-storage) · [Email](#-email) · [AI](#-ai--llm) · [Analytics](#-analytics) · [Monitoring](#-monitoring--error-tracking) · [Search](#-search) · [Cache & Queues](#-cache--queues) · [Domains & DNS](#-domains-dns--cdn) · [Payments](#-payments) · [Dev Tools](#-developer-tools) · [Self-Host](#-self-host-only-free-software-not-free-hosting)
 
 ---
 
-## 💾 Databases & Storage
+## 🏷️ Legend
 
-### SQL Databases
+| Badge | Meaning |
+| ----- | ------- |
+| 🟢 | Free forever (no expiry) |
+| 🔵 | Free credits (runs out) |
+| 🟡 | Free trial (time-limited) |
+| 💳 | Credit card required |
+| 😴 | Sleeps / pauses when inactive |
+| ⚡ | Usage or rate limits |
+| 🏠 | Self-hostable |
+| 💰 | Transaction fees |
+| ⏳ | Not yet re-verified |
 
-| Service | Type | Free Quota | Scale-to-Zero | Best For |
-|---------|------|-----------|----------------|-----------| 
-| **Supabase** | PostgreSQL | 500 MB | ✅ | Full PostgreSQL + Auth + Realtime |
-| **Neon** | PostgreSQL | 500 MB | ✅ Serverless | Branching + Vercel integration |
-|| **PlanetScale** | MySQL | 🔴 No free tier (Hobby removed Apr 2024) | ❌ | MySQL (serverless) |
-| **Prisma Postgres** | PostgreSQL | 500 MB | ✅ | TypeScript/Prisma-first |
-| **Nile** | PostgreSQL | 1 GB | ✅ | Multi-tenant SaaS |
-| **CockroachDB** | Distributed SQL | 10 GiB | ✅ | Distributed systems |
-| **Aiven** | PostgreSQL/MySQL/Redis | 1 GB | ⚠️ | Multiple database types |
-
-### NoSQL & Document Databases
-
-| Service | Type | Free Quota | Realtime | Best For |
-|---------|------|-----------|----------|----------|
-| **MongoDB Atlas** | MongoDB | 512 MB | ❌ | Document storage |
-| **Firebase Firestore** | NoSQL | 1 GiB | ✅ | Mobile + web apps |
-| **Firebase Realtime DB** | NoSQL | 1 GB | ✅ | Simple sync |
-| **Convex** | Document DB | ~0.5 GB | ✅ | Realtime-first apps |
-| **Turso** | SQLite | 5 GB | ✅ | Edge-first SQLite |
-| **Cloudflare D1** | SQLite | 5 GB | ✅ | Workers integration |
-
-### Cache & Search
-
-| Service | Type | Free Tier | Best For |
-|---------|------|-----------|----------|
-| **Upstash** | Redis | 256 MB | Serverless caching |
-| **Redis Cloud** | Redis | 30 MB | In-memory cache |
-| **Meilisearch** | Search | Self-hosted | Full-text search |
-| **Typesense** | Search | Self-hosted | Fast search API |
+**"Free" ≠ "free software."** A hosted free tier costs you nothing. A self-hostable project is free to download, but you pay for the server. Those are listed separately [here](#-self-host-only-free-software-not-free-hosting).
 
 ---
 
-## 📧 Email Services
+# 🏆 $0 Stacks
 
-### Transactional Email
+> 💡 Each stack is a starting point. Real cost depends on traffic, storage, compute, and API usage.
 
-| Service | Free Quota | Key Strength | Best For |
-|---------|-----------|--------------|----------|
-| **Resend** | 3,000/mo (100/day) | Excellent DX, React Email | SaaS notifications |
-| **Brevo** | 300/day | SMTP + API | High-volume email |
-| **Amazon SES** | 200/day (first 30 days) | Extremely cheap at scale | Production email |
-| **Mailtrap** | 4,000/mo | Testing + production sandbox | Development |
-| **Mailgun** | 100/day free plan | Powerful API, webhooks | Reliable delivery |
-| **Postmark** | 100/mo | Excellent deliverability | High-importance email |
-| **MailerSend** | 500/mo | Simple API, templates | Quick setup |
+## 🚀 $0 SaaS Stack
 
-### Email Marketing & Newsletters
+```text
+Frontend       → Cloudflare Pages (or Vercel for Next.js, non-commercial only)
+Backend        → Cloudflare Workers
+Database       → Neon or Supabase (Postgres)
+Auth           → Better Auth or Supabase Auth
+Storage        → Cloudflare R2
+Email          → Resend
+Analytics      → PostHog
+Monitoring     → Sentry
+Payments       → Stripe
+DNS / CDN      → Cloudflare
+Code + CI      → GitHub + GitHub Actions
+```
 
-| Service | Free Tier | Subscribers | Best For |
-|---------|-----------|------------|----------|
-| **Brevo** | 300/day + automation | Unlimited | Email campaigns + CRM |
-| **Mailchimp** | ✅ Limited | Up to 500 | Traditional email marketing |
-| **MailerLite** | Limited | Up to 1,000 | Creators & small business |
-| **HubSpot** | ✅ Free | 1,000 contacts | All-in-one marketing |
-| **Substack** | ✅ Free | Unlimited | Newsletter publishing |
-| **Beehiiv** | Limited | 1,000 subscribers | Paid newsletter platform |
+**Where you hit the wall:**
 
----
+* Workers + Postgres: use **Cloudflare Hyperdrive** (or a pooled connection string) or you will exhaust database connections.
+* Supabase free projects pause after about a week of inactivity. Fine for dev, risky for production.
+* Vercel's free Hobby plan is for non-commercial use. A paying SaaS needs Pro or a different host.
+* Resend's free plan has a daily send cap that password-reset spikes can hit.
 
-## 🐛 Monitoring, Errors & Performance
+## 🤖 $0 AI Stack
 
-### Error Tracking
+```text
+Frontend       → Cloudflare Pages
+Backend        → Cloudflare Workers
+LLM            → Gemini / Groq / Cerebras (rate-limited free tiers)
+Embeddings     → Cloudflare Workers AI or Gemini
+Vector DB      → Supabase pgvector (or Cloudflare Vectorize)
+Database       → Supabase / Neon
+Email          → Resend
+Analytics      → PostHog
+Monitoring     → Sentry
+```
 
-| Service | Free Tier | Stack Traces | Session Replay | Best For |
-|---------|-----------|--------------|----------------|----------|
-| **Sentry** | 5K events/mo | ✅ Excellent | ✅ Full replay | Industry standard |
-| **Highlight.io** | Free tier | ✅ | ✅ Error + logs + replay | All-in-one observability |
-| **Rollbar** | Free tier | ✅ | ⚠️ Limited | Simple error monitoring |
-| **Bugsnag** | Free tier | ✅ | ⚠️ Limited | Mobile + web errors |
-| **GlitchTip** | Self-hosted / Free | ✅ | ⚠️ | Open-source Sentry alternative |
-| **Airbrake** | Trial/free | ✅ | ⚠️ | Mature error monitoring |
+**Where you hit the wall:** free LLM tiers are rate-limited (requests per minute and per day) and often allow providers to use your prompts for training. Do not send sensitive user data. Add a provider fallback (e.g. Groq → Gemini → OpenRouter) before launch.
 
-### Logs, Metrics & APM
+## 🌐 $0 Static Site Stack
 
-| Service | Free Tier | Logs | Metrics | Traces | Best For |
-|---------|-----------|------|---------|--------|----------|
-| **Better Stack** | ✅ Free | ✅ | ✅ Uptime | ✅ | Logs + incident management |
-| **Grafana Cloud** | Generous free | ✅ | ✅ | ✅ | Metrics + logs + traces |
-| **New Relic** | 100 GB/mo | ✅ | ✅ | ✅ | Full-stack observability |
-| **SigNoz** | Self-hosted | ✅ | ✅ | ✅ OpenTelemetry | Complete observability |
-| **OpenObserve** | Self-hosted/free | ✅ High efficiency | ✅ | ✅ | Logs + metrics + traces |
-| **Elastic Observability** | Self-hosted/free | ✅ Powerful | ✅ | ✅ | Logs + APM + metrics |
-| **Prometheus + Grafana** | ✅ Open source | ⚠️ | ✅ Industry std | ⚠️ | Metrics & dashboards |
-| **Honeycomb** | Free tier | ⚠️ | ⚠️ | ✅ Distributed tracing | High-cardinality observability |
-| **Jaeger** | ✅ Open source | ❌ | ❌ | ✅ | Distributed tracing |
-| **Datadog** | Free tier | ✅ | ✅ | ✅ | Powerful all-in-one APM |
+```text
+Hosting        → Cloudflare Pages / GitHub Pages
+DNS            → Cloudflare
+Analytics      → Cloudflare Web Analytics / Umami Cloud
+Forms          → Tally / Formspree
+```
 
----
+**Where you hit the wall:** almost nowhere. Build-minute limits are the first thing you will notice on large sites.
 
-## 🤖 AI & Machine Learning
+## 🔌 $0 API Stack
 
-### AI APIs & LLM Inference
+```text
+Runtime        → Cloudflare Workers / Render / Koyeb
+Database       → Neon / Supabase
+Cache          → Upstash Redis
+Monitoring     → Sentry + UptimeRobot
+Email          → Resend
+```
 
-| Service | Free Tier | Models | Speed | Best For |
-|---------|-----------|--------|-------|----------|
-| **Google Gemini API** | ✅ Generous | Gemini | Fast | Multimodal, general AI |
-| **Groq** | ✅ Free | Llama, Qwen, etc. | ⚡ Extremely fast | Fast API inference |
-| **Cerebras** | ✅ Free | Llama, Qwen | ⚡ Extremely fast | LLM inference |
-| **Mistral AI** | ✅ Free | Mistral models | Good | Open models |
-| **GitHub Models** | ✅ Free | Various open | Good | Developer-friendly |
-| **OpenRouter** | ✅ Free | 200+ models | Variable | Multi-model experimentation |
-| **Hugging Face** | ✅ Free | 1000s of models | Variable | Open-source AI ecosystem |
-| **Cloudflare Workers AI** | ✅ Free | Llama, Qwen | Edge | Edge AI deployment |
-| **Cohere** | ✅ Free | Command, Embed | Good | RAG & search |
-| **SambaNova Cloud** | ✅ Free | Llama, DeepSeek | ⚡ Fast | Production inference |
-| **Together AI** | ⚠️ Free credits | Open models | Good | Model variety |
-| **Fireworks AI** | ⚠️ Free credits | Llama, Qwen, DeepSeek | Good | Production platform |
-| **DeepInfra** | ⚠️ Free credits | Open models | Good | Many models |
-| **Replicate** | ⚠️ Trial credits | Image/video/LLM | Variable | Model marketplace |
-| **Modal** | ⚠️ Credits | Any model | Flexible | Run your own models |
-| **AWS Bedrock** | ⚠️ Free trials | Claude, Llama, Nova | Good | Enterprise-grade |
-| **Azure AI Foundry** | ⚠️ Credits | OpenAI + open | Good | Microsoft ecosystem |
+**Where you hit the wall:** Render's free web service sleeps after idle (cold starts of tens of seconds), and Workers have a CPU time limit per request. Both are fine for prototypes, not for latency-sensitive production.
 
-### Free AI Chat Interfaces
+## 📱 $0 Mobile Stack
 
-| Service | Features |
-|---------|----------|
-| **ChatGPT** | General AI, coding, web search (limited) |
-| **Google Gemini** | Multimodal, Google ecosystem integration |
-| **Claude** | Excellent writing & reasoning |
-| **DeepSeek** | Reasoning, coding, affordable |
-| **Mistral Le Chat** | General AI, open models |
-| **Perplexity** | AI search & research |
-| **Qwen Chat** | Multilingual, strong coding |
-| **Meta AI** | General AI across Meta platforms |
-| **Grok** | Real-time search integration |
-| **Microsoft Copilot** | Web search + Microsoft integration |
-| **Poe** | Access to multiple AI models |
+```text
+App            → Expo (React Native) or Flutter
+Backend + DB   → Supabase or Firebase
+Auth           → Supabase Auth / Firebase Auth
+Push           → Firebase Cloud Messaging
+Storage        → Supabase Storage / Cloudflare R2
+Crash reports  → Sentry / Firebase Crashlytics
+```
 
----
+**Where you hit the wall:** the stores, not the infrastructure. Apple Developer ($99/year) and Google Play ($25 one-time) are unavoidable for publishing.
 
-## 📊 Analytics & Tracking
+## 🧑‍💻 $0 Side Project Stack
 
-### Product Analytics & Session Replay
+```text
+Hosting        → Cloudflare Pages + Workers
+Database       → Turso (SQLite) or Neon
+Auth           → Better Auth
+Analytics      → Umami Cloud / Cloudflare Web Analytics
+Uptime         → UptimeRobot
+```
 
-| Service | Free Tier | Events | Session Replay | Funnels | Self-hosted |
-|---------|-----------|--------|----------------|---------|-------------|
-| **PostHog** | Generous free | Unlimited-ish | ✅ Full | ✅ | ✅ |
-| **Microsoft Clarity** | ✅ Free forever | Unlimited traffic | ✅ | ✅ | ❌ |
-| **Umami** | Cloud/self-hosted | Limited cloud | ✅ | ⚠️ | ✅ |
-| **Matomo** | ✅ Self-hosted | Unlimited | ✅ | ✅ | ✅ |
-| **OpenPanel** | ✅ Self-hosted | Unlimited events | ✅ | ✅ | ✅ |
-| **Mixpanel** | Free tier | 1M events/mo | ❌ | ✅ | ❌ |
-| **Amplitude** | Free tier | Limited | ❌ | ✅ | ❌ |
-| **Google Analytics 4** | ✅ Free | Large volume | ✅ | ✅ | ❌ |
-| **Plausible** | 🔴 Trial only | — | ❌ | ❌ | ❌ |
-| **Countly** | ✅ Self-hosted | Unlimited | ✅ | ✅ | ✅ |
-| **Ackee** | ✅ Self-hosted | Unlimited | ❌ | ⚠️ | ✅ |
-| **GoatCounter** | ✅ Free | Limited | ❌ | ⚠️ | ❌ |
-| **Pirsch** | ✅ Self-hosted | Unlimited | ❌ | ✅ | ✅ |
-| **Fathom** | 🔴 Trial only | — | ❌ | ⚠️ | ❌ |
+Optimized for **lowest setup effort and no card on file**, so a forgotten project cannot surprise you with a bill.
 
-### Website & SEO Analytics
+## 🐙 $0 Open Source Stack
 
-| Service | Free Tier | Best For |
-|---------|-----------|----------|
-| **Google Search Console** | ✅ Free | Search performance, indexing |
-| **Google Analytics 4** | ✅ Free | Website traffic & conversions |
-| **Bing Webmaster Tools** | ✅ Free | Bing search optimization |
-| **Ahrefs Webmaster Tools** | Limited | Site audit, backlinks |
-| **Semrush** | Limited | Keywords, competitor analysis |
-| **Ubersuggest** | Limited | Keyword research |
+```text
+Code + Issues  → GitHub
+CI/CD          → GitHub Actions (free for public repos)
+Docs           → GitHub Pages / Cloudflare Pages
+Packages       → npm / GitHub Packages / GHCR
+Security       → GitHub code scanning + Dependabot (free for public repos)
+Dev env        → GitHub Codespaces (monthly free hours)
+Community      → GitHub Discussions
+```
+
+Many paid tools offer free plans for open source projects. Always check each vendor's open-source program before paying.
 
 ---
 
-## 📣 Marketing & Growth
+# ☁️ Hosting
 
-### Email Marketing
-
-*See Email Services section above*
-
-### Social Media & Content
-
-| Category | Service | Free Tier | Best For |
-|----------|---------|-----------|----------|
-| **Social Scheduling** | Buffer | ✅ | 3 channels, social media |
-| **Social Scheduling** | Metricool | Limited | Analytics + scheduling |
-| **Social Scheduling** | Publer | Limited | Multi-platform |
-| **Social Scheduling** | Later | Limited | Instagram planning |
-| **Content Creation** | Canva | ✅ | Graphics, video, social |
-| **AI Content** | ChatGPT | ✅ Limited | Copy, ideas, strategy |
-| **AI Content** | Claude | ✅ Limited | Long-form writing |
-| **AI Content** | Gemini | ✅ Limited | Writing, research |
-
-### Forms & Lead Capture
-
-| Service | Free Tier | Submissions | Best For |
-|---------|-----------|------------|----------|
-| **Tally** | ✅ | Unlimited* | Simple forms |
-| **Google Forms** | ✅ | Unlimited-ish | Quick surveys |
-| **HubSpot Forms** | ✅ | Unlimited | CRM integration |
-| **Typeform** | Limited | Very limited responses | Beautiful forms |
-
-### Contact & Live Chat Platforms
-
-| Service | Type | Free Tier | Best For | Key Caveat |
-|---------|------|-----------|----------|------------|
-| [tawk.to](https://www.tawk.to/) | Live chat + forms | ✅ Forever; unlimited team members | Website chat with a shared inbox | Branding and advanced services are paid add-ons |
-| [Crisp](https://crisp.chat/en/) | Live chat + contact forms | ✅ Forever; 2 seats, 100 customer profiles | Small teams centralizing chat and form submissions | AI, shared email, and advanced automation require paid plans |
-| [Chatwoot](https://www.chatwoot.com/) | Live chat | ✅ Cloud Hacker; 2 agents, 500 conversations/mo | Basic support inbox or self-hosted customer support | Cloud free plan has 30-day retention and limited channels |
-| [Tidio](https://www.tidio.com/) | Live chat + automation | ✅ Forever; 50 conversations/mo, 10 agents | Small websites needing human chat and basic automation | Chat becomes unavailable after the monthly conversation quota is reached |
-| [Formspree](https://formspree.io/) | Contact forms | ✅; 50 submissions/mo | Hosted forms for static sites without a backend | Free history is retained for only 30 days and is positioned mainly for testing/development |
-| [Fillout](https://www.fillout.com/) | Contact forms + workflows | ✅ Forever; 1,000 responses/mo | Surveys, applications, registrations, and multi-page forms | Free plan includes branding and excludes CAPTCHA, custom domains, and some field types |
-
-Always verify current quotas, retention periods, branding, and overage behavior on the provider’s pricing page before using a service in production.
-
-### Automation & Integration
-
-| Service | Free Tier | Best For |
-|---------|-----------|----------|
-| **Make (Zapier alternative)** | ✅ Workflows | Powerful automation |
-| **Zapier** | Limited | 100+ integration ecosystem |
-| **n8n** | ✅ Self-hosted | Open-source automation |
-
-### CRM & Sales
-
-| Service | Free Tier | Contacts | Best For |
-|---------|-----------|----------|----------|
-| **HubSpot CRM** | ✅ Free | 1,000 limit | Sales + marketing |
-| **Zoho CRM** | Limited | Limited | Small businesses |
-
-### Other Marketing Tools
-
-| Category | Service | Free Tier |
-|----------|---------|-----------|
-| **Linkography** | Linktree | ✅ Basic |
-| **Linkography** | Beacons | ✅ Creator-focused |
-| **Short Links** | Dub | Limited + analytics |
-| **Short Links** | Bitly | Limited |
-| **Live Chat** | HubSpot Chat | ✅ Free |
+| Service | Type | Free | Limits (best known) | Card | Verified |
+| ------- | ---- | ---- | ------------------- | ---- | -------- |
+| [Cloudflare Pages](https://pages.cloudflare.com/) | Static / full-stack | 🟢 | Unlimited bandwidth, limited builds per month | ❌ | ⏳ |
+| [Cloudflare Workers](https://workers.cloudflare.com/) | Serverless / edge | 🟢⚡ | ~100k requests/day, short CPU time per request | ❌ | ⏳ |
+| [Vercel](https://vercel.com/) | Frontend | 🟢⚡ | Hobby plan is **non-commercial only**; bandwidth and function limits | ❌ | ⏳ |
+| [Netlify](https://www.netlify.com/) | Frontend | 🟢⚡ | Credit-based free plan covering builds, bandwidth, functions | ❌ | ⏳ |
+| [Render](https://render.com/) | App hosting | 🟢😴 | Free web services sleep when idle; free Postgres expires | ❌ | ⏳ |
+| [Koyeb](https://www.koyeb.com/) | Containers | 🟢⚡ | One small free instance | ⚠️ varies | ⏳ |
+| [GitHub Pages](https://pages.github.com/) | Static | 🟢 | Small site size cap, soft bandwidth cap, no server code | ❌ | ⏳ |
+| [Deno Deploy](https://deno.com/deploy) | Serverless | 🟢⚡ | Request and bandwidth limits | ❌ | ⏳ |
+| [Google Cloud Run](https://cloud.google.com/run) | Containers | 🟢⚡💳 | Monthly free request and compute allowance | 💳 | ⏳ |
+| [Railway](https://railway.com/) | Cloud | 🔵 | Trial credits, then paid | 💳 | ⏳ |
+| [Fly.io](https://fly.io/) | Cloud | 🔵 | Pay-as-you-go for new accounts, no standing free plan | 💳 | ⏳ |
 
 ---
 
-## 🎨 Design & Media
+# 💾 Databases
 
-### Images & Stock Photos
+| Service | Engine | Free | Limits (best known) | Notes | Verified |
+| ------- | ------ | ---- | ------------------- | ----- | -------- |
+| [Supabase](https://supabase.com/) | PostgreSQL | 🟢😴 | ~500 MB DB, limited active projects | Pauses after about a week idle | ⏳ |
+| [Neon](https://neon.tech/) | PostgreSQL | 🟢😴 | ~0.5 GB per project | Scales to zero, cold start on first query | ⏳ |
+| [Aiven](https://aiven.io/) | PostgreSQL / MySQL / Valkey | 🟢⚡ | Single small node | Good for learning | ⏳ |
+| [CockroachDB](https://www.cockroachlabs.com/) | Distributed SQL | 🟢⚡ | Free Basic tier with monthly usage allowance | Postgres-compatible | ⏳ |
+| [Nile](https://www.thenile.dev/) | PostgreSQL | 🟢⚡ | Free tier for multi-tenant apps | Tenant-aware Postgres | ⏳ |
+| [Turso](https://turso.tech/) | SQLite (libSQL) | 🟢⚡ | Several GB storage, monthly row read/write caps | Great with Workers | ⏳ |
+| [MongoDB Atlas](https://www.mongodb.com/atlas) | MongoDB | 🟢⚡ | M0 cluster, ~512 MB | Shared cluster, connection caps | ⏳ |
+| [Firebase](https://firebase.google.com/) | Firestore / RTDB | 🟢⚡ | Spark plan, daily read/write caps | File Storage may require the paid plan | ⏳ |
 
-| Service | Free Tier | Usage |
-|---------|-----------|-------|
-| **Unsplash** | ✅ | High-quality images |
-| **Pexels** | ✅ | Free stock photos + videos |
-| **Pixabay** | ✅ | Stock images & vectors |
-
-### Video & Editing
-
-| Service | Free Tier | Best For |
-|---------|-----------|----------|
-| **CapCut** | ✅ | Short-form video editing |
-| **Canva** | ✅ | Social videos, graphics |
-| **DaVinci Resolve** | ✅ Open source | Professional video editing |
+> 💡 Using Postgres from Cloudflare Workers? Put **Hyperdrive** or a pooler in front.
 
 ---
 
-## 🛠️ Developer Tools
+# 🔐 Authentication
 
-### Version Control & CI/CD
-
-| Service | Free Tier |
-|---------|-----------|
-| **GitHub** | ✅ Unlimited public/private + Actions |
-| **GitLab** | ✅ Free tier with CI/CD |
-| **Gitea** | ✅ Self-hosted Git |
-
-### Code Quality & Testing
-
-| Service | Free Tier |
-|---------|-----------|
-| **SonarCloud** | ✅ Free for open-source |
-| **CodeFactor** | ✅ Basic analysis |
-
-### API Development
-
-| Service | Free Tier |
-|---------|-----------|
-| **Postman** | ✅ Limited but generous |
-| **Insomnia** | ✅ Open source |
+| Service | Free | Limits (best known) | Notes | Verified |
+| ------- | ---- | ------------------- | ----- | -------- |
+| [Supabase Auth](https://supabase.com/auth) | 🟢 | Tens of thousands of MAU on the free plan | Tied to Supabase | ⏳ |
+| [Firebase Authentication](https://firebase.google.com/products/auth) | 🟢 | Generous MAU on the basic plan | Phone auth is metered | ⏳ |
+| [Clerk](https://clerk.com/) | 🟢⚡ | ~10k MAU | Hosted UI components | ⏳ |
+| [Auth0](https://auth0.com/) | 🟢⚡ | Tens of thousands of MAU | Feature-limited free plan | ⏳ |
+| [Better Auth](https://www.better-auth.com/) | 🟢🏠 | Library, no MAU limit | You own the data and the database | ⏳ |
+| [Auth.js](https://authjs.dev/) | 🟢🏠 | Library, no MAU limit | Self-managed | ⏳ |
 
 ---
 
-## 💡 Tips for Choosing Free Services
+# 📦 Storage
 
-✅ **Check the fine print:**
-- Does it have hard usage limits that will hit you?
-- Does it require a credit card? (⚠️ Can lead to unexpected charges)
-- Is it "free forever" or trial-only?
-
-✅ **Evaluate for production:**
-- Free tier reliability & uptime SLAs
-- Support quality (community vs. enterprise)
-- Pricing cliff (how much when you outgrow free tier?)
-
-✅ **Privacy & data considerations:**
-- Data residency requirements
-- GDPR/compliance needs
-- Vendor lock-in risk
+| Service | Free | Limits (best known) | Notes | Verified |
+| ------- | ---- | ------------------- | ----- | -------- |
+| [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/) | 🟢⚡ | ~10 GB storage, **zero egress fees** | S3-compatible | ⏳ |
+| [Supabase Storage](https://supabase.com/storage) | 🟢⚡ | ~1 GB on the free plan | Tied to Supabase | ⏳ |
+| [Firebase Storage](https://firebase.google.com/products/storage) | ⚡💳 | Requires the paid plan for new projects | Check current terms | ⏳ |
+| [Backblaze B2](https://www.backblaze.com/cloud-storage) | 🟢⚡ | ~10 GB free | S3-compatible | ⏳ |
+| [Cloudinary](https://cloudinary.com/) | 🟢⚡ | Monthly credit allowance | Image/video transforms | ⏳ |
 
 ---
 
-## 📋 Best Practices & Use Cases
+# 📧 Email
 
-| Service | Best Use Case | Why | Watch Out |
-|---|---|---|---|
-| **GitHub Pages** | Static docs, portfolios | Git-native deploy, free SSL | No server-side logic |
-| **Vercel** | Next.js / React SSR | Edge network, preview deployments | Serverless cold starts, function limits |
-| **Netlify** | Static sites + serverless functions | Forms, splits testing built-in | Function compute minutes capped |
-| **Cloudflare Pages** | High-traffic static + D1 | Global edge, free Workers/D1 | D1 egress billing above free quota |
-| **Render** | General SaaS backend | Free PostgreSQL + 750 hrs/mo, sleep to zero | Sleeping service warms up on first request |
-| **Koyeb** | APIs / backends | Always-on free instance, global deploy | Limited to 1 service on free plan |
-| **Fly.io** | Docker apps behind a proxy (legacy free tier only) | Self-managed, VM-level control | Pay-as-you-go for new accounts |
-| **Google Cloud Run** | Containerized stateless services | Generous free quota per month | Egress beyond free tier billed |
-| **AWS Lambda** | Event-driven, sporadic workloads | Always-free 1M req/mo | Complexity, cold starts, cost spikes at scale |
-| **Supabase** | Full Postgres + auth + realtime for MVPs | 500 MB, instant auth/realtime | 500 MB storage fills fast |
-| **Neon** | Postgres with branching / dev environments | Serverless, branch like Git, Vercel-native | Compute hours cap per project |
-| **Prisma Postgres** | TypeScript/Prisma-first apps | 500 MB, zero config, branch | Smaller ecosystem than Supabase |
-| **Nile** | Multi-tenant SaaS backends | 1 GB, per-tenant isolation | Smaller community |
-| **CockroachDB** | Distributed, geo-redundant systems | 10 GiB free, ACID distributed SQL | Slower than single-region Postgres |
-| **MongoDB Atlas** | Document stores, quick prototypes | 512 MB shared cluster | No real-time sync, storage cap tight |
-| **Firebase Firestore** | Mobile + web apps with live sync | 1 GiB, realtime listeners | Pricing escalates with reads |
-| **Turso** | Edge-first apps needing SQLite | 5 GB, 500M reads/mo, 100 DBs | Reduced features on free tier (no edge replication) |
-| **Cloudflare D1** | Apps already on Workers | 5 GB, native Workers integration | Egress billed over free tier |
-| **Upstash Redis** | Rate limiting, caching, queues | Serverless, 256 MB free | Command pricing above free quota unpredictable |
-| **Meilisearch / Typesense** | Full-text search for small catalogs | Free on self-host | Needs your own infra |
-| **Resend** | SaaS transactional email with React Email | 3,000/mo, excellent DX | No marketing features |
-| **Brevo** | High-volume email + automation | 300/day, SMTP + API, CRM | Branding on free plan |
-| **Amazon SES** | Production email at low cost | 200/day first 30 days, cheapest at scale | Steep setup, needs reputation management |
-| **Mailgun** | Developer API with webhooks | 100/day, 1 domain | Low daily cap |
-| **Postmark** | High-importance email (password resets, receipts) | 100/mo, best deliverability | Tiny cap, expensive after |
-| **Sentry** | Error tracking + session replay for any stack | 5K errors/mo, full replay | Overages dropped silently on free |
-| **Better Stack** | Logs + uptime monitoring | Generous free logs + uptime checks | Log retention limited |
-| **Grafana Cloud** | Metrics + logs + traces in one | 100% OpenTelemetry | Alerting limited on free |
-| **PostHog** | Product analytics + feature flags + replay | Unlimited-ish events, self-host option | Cloud free has capture limits |
-| **Microsoft Clarity** | Heatmaps + session recordings | Unlimited sessions, free forever | No funnels without paid |
-| **Matomo** | Privacy-first analytics, GDPR-friendly | Self-host, unlimited | You manage hosting/updates |
-| **Google Search Console** | SEO health, indexing issues | Free, direct from Google | Data only for your property |
-| **Buffer / Metricool** | Social scheduling for small teams | Free posts/month, analytics | Post count caps |
-| **Tally** | Unlimited-form lead capture | No form limit, clean UI | Branded on free |
-| **Tawk.to / Crisp** | Live chat for small sites | Forever free, shared inbox | Branding, limited AI on free |
-| **n8n** | Automation, self-hosted | Free on your infra, visual flows | Self-hosting responsibility |
-| **HubSpot CRM** | Small business sales pipeline | Free up to 1,000 contacts | Heavy upsell, data lock-in |
+| Service | Free | Limits (best known) | Notes | Verified |
+| ------- | ---- | ------------------- | ----- | -------- |
+| [Resend](https://resend.com/) | 🟢⚡ | A few thousand emails/month, daily cap | Best developer experience | ⏳ |
+| [Brevo](https://www.brevo.com/) | 🟢⚡ | Daily send cap | Includes marketing email | ⏳ |
+| [Mailgun](https://www.mailgun.com/) | 🟢⚡ | Small daily cap | Check current free plan | ⏳ |
+| [Amazon SES](https://aws.amazon.com/ses/) | 🔵 | New-account credit model | Cheapest at scale | ⏳ |
+| [Loops](https://loops.so/) | 🟢⚡ | Limited contacts | Product and marketing email | ⏳ |
 
-💡 When picking, rank by: (1) real free cap vs your projected usage, (2) sleep/cold-start behavior if latency matters, (3) data egress and overage pricing, (4) how painful migration is if you outgrow it. Set billing alerts on every account with a card attached.
+> ❌ **Removed:** SendGrid, because its standing free plan was retired.
 
 ---
 
-## 📝 Contributing
+# 🤖 AI & LLM
 
-Found an outdated service or missing tool? **Pull requests welcome!**
+## 🧠 LLM APIs
 
-Please include:
-- Service name & link
-- Free tier details
-- Key pros/cons
-- Best use case
+| Service | Free | Limits (best known) | Watch out for | Verified |
+| ------- | ---- | ------------------- | ------------- | -------- |
+| [Google Gemini](https://ai.google.dev/) | 🟢⚡ | Per-minute and per-day request caps | Free-tier data may be used for training | ⏳ |
+| [Groq](https://groq.com/) | 🟢⚡ | Rate limits per model | Very fast, open models | ⏳ |
+| [Cerebras](https://www.cerebras.ai/) | 🟢⚡ | Rate limits per model | Open models | ⏳ |
+| [Mistral AI](https://mistral.ai/) | 🟢⚡ | Experiment tier with rate limits | Data-sharing terms apply | ⏳ |
+| [OpenRouter](https://openrouter.ai/) | 🟢⚡ | Free models, low daily request cap | Models come and go | ⏳ |
+| [Hugging Face](https://huggingface.co/) | 🟢⚡ | Monthly inference credits | Cold starts on small models | ⏳ |
+| [GitHub Models](https://github.com/marketplace/models) | 🟢⚡ | Rate-limited prototyping access | For prototyping only | ⏳ |
+| [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) | 🟢⚡ | Daily free allowance | Runs next to your Worker | ⏳ |
+
+## 🖥️ Notebooks & Compute
+
+* [Google Colab](https://colab.research.google.com/): free GPU/TPU sessions, time-limited
+* [Kaggle](https://www.kaggle.com/): weekly free GPU hours
+* [Lightning AI](https://lightning.ai/): monthly free credits
+
+## 🔎 Vector Databases
+
+* [Supabase pgvector](https://supabase.com/docs/guides/ai): runs inside your free Postgres
+* [Cloudflare Vectorize](https://developers.cloudflare.com/vectorize/): pairs with Workers
+* [Qdrant Cloud](https://qdrant.tech/): small free cluster
+* [Pinecone](https://www.pinecone.io/): free starter plan
+* [Weaviate](https://weaviate.io/): sandbox / trial clusters
+* [Chroma](https://www.trychroma.com/): open source, 🏠 self-host or cloud
+
+## 🎙️ Speech
+
+* [Deepgram](https://deepgram.com/): free credits
+* [ElevenLabs](https://elevenlabs.io/): small monthly free allowance
+* [Whisper](https://github.com/openai/whisper): open-source model, 🏠 you supply the compute
+
+## 🎨 Image Generation
+
+* [Replicate](https://replicate.com/): pay per run, small trial credit
+* [Hugging Face Spaces](https://huggingface.co/spaces): community demos
+* [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/): image models with the daily allowance
+
+---
+
+# 📊 Analytics
+
+| Service | Free | Limits (best known) | Notes | Verified |
+| ------- | ---- | ------------------- | ----- | -------- |
+| [PostHog](https://posthog.com/) | 🟢⚡ | ~1M events/month | Product analytics, replays, flags | ⏳ |
+| [Umami Cloud](https://umami.is/) | 🟢⚡ | Monthly event cap | Privacy-friendly, 🏠 also self-hostable | ⏳ |
+| [Google Analytics](https://analytics.google.com/) | 🟢 | Generous | Privacy and consent obligations apply | ⏳ |
+| [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) | 🟢 | Free | Basic, cookie-less | ⏳ |
+
+> 🏠 **Moved to self-host:** Plausible (paid hosted, free only if you self-host).
+
+---
+
+# 🐛 Monitoring & Error Tracking
+
+| Service | Free | Limits (best known) | Notes | Verified |
+| ------- | ---- | ------------------- | ----- | -------- |
+| [Sentry](https://sentry.io/) | 🟢⚡ | A few thousand errors/month | Single user on free plan | ⏳ |
+| [Better Stack](https://betterstack.com/) | 🟢⚡ | Limited monitors, short retention | Uptime + logs | ⏳ |
+| [UptimeRobot](https://uptimerobot.com/) | 🟢⚡ | ~50 monitors, 5-minute interval | Non-commercial terms, check | ⏳ |
+| [Grafana Cloud](https://grafana.com/) | 🟢⚡ | Metrics, logs, traces allowance | Good all-in-one observability | ⏳ |
+
+---
+
+# 🔍 Search
+
+| Service | Free | Limits (best known) | Notes | Verified |
+| ------- | ---- | ------------------- | ----- | -------- |
+| [Algolia](https://www.algolia.com/) | 🟢⚡ | Monthly search request and record caps | Best hosted search UX | ⏳ |
+| [Tavily](https://tavily.com/) | 🟢⚡ | Monthly credit allowance | Search API for AI agents | ⏳ |
+
+> 🏠 **Moved to self-host:** Meilisearch, Typesense, OpenSearch (hosted plans are paid or trial only).
+
+---
+
+# ⚡ Cache & Queues
+
+| Service | Free | Limits (best known) | Notes | Verified |
+| ------- | ---- | ------------------- | ----- | -------- |
+| [Upstash Redis](https://upstash.com/) | 🟢⚡ | Monthly command cap | HTTP API, works from Workers | ⏳ |
+| [Upstash Kafka / QStash](https://upstash.com/) | 🟢⚡ | Small monthly allowance | Serverless messaging | ⏳ |
+| [Cloudflare KV](https://developers.cloudflare.com/kv/) | 🟢⚡ | Daily read/write caps | Eventually consistent | ⏳ |
+| [Cloudflare Queues](https://developers.cloudflare.com/queues/) | 🟢⚡ | Free-tier operations | Workers only | ⏳ |
+
+> 🏠 **Moved to self-host:** RabbitMQ, Valkey.
+
+---
+
+# 🌐 Domains, DNS & CDN
+
+> A real domain is never free. Budget about $10/year. Free subdomains (`*.pages.dev`, `*.workers.dev`, `*.vercel.app`) work for prototypes.
+
+| Service | Free | Notes | Verified |
+| ------- | ---- | ----- | -------- |
+| [Cloudflare DNS + CDN](https://www.cloudflare.com/) | 🟢 | DNS, CDN, basic DDoS protection | ⏳ |
+| [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/) | 💳 | Domains at wholesale cost, no markup | ⏳ |
+| [Bunny.net](https://bunny.net/) | 🟡 | Trial, then cheap pay-as-you-go CDN | ⏳ |
+| [AWS CloudFront](https://aws.amazon.com/cloudfront/) | 🔵 | New-account credit model | ⏳ |
+
+---
+
+# 🔒 Security
+
+| Service | Free | Notes | Verified |
+| ------- | ---- | ----- | -------- |
+| [Cloudflare](https://www.cloudflare.com/) | 🟢 | WAF basics, DDoS, bot protection (free tier) | ⏳ |
+| [Snyk](https://snyk.io/) | 🟢⚡ | Limited scans/month on free plan | ⏳ |
+| [GitHub code scanning + Dependabot](https://github.com/security/advanced-security) | 🟢 | Free for **public** repos only | ⏳ |
+| [Socket](https://socket.dev/) | 🟢⚡ | Dependency supply-chain scanning | ⏳ |
+
+---
+
+# 🧑‍💻 Developer Tools
+
+## Code Hosting
+
+* [GitHub](https://github.com/)
+* [GitLab](https://gitlab.com/)
+* [Bitbucket](https://bitbucket.org/)
+
+## CI/CD
+
+* [GitHub Actions](https://github.com/features/actions): free for public repos, monthly minutes for private
+* [GitLab CI/CD](https://docs.gitlab.com/ee/ci/): monthly compute minutes
+* [CircleCI](https://circleci.com/): monthly credits
+* [Buildkite](https://buildkite.com/): free tier for small teams
+
+## Package Registries
+
+* [npm](https://www.npmjs.com/)
+* [GitHub Packages](https://github.com/features/packages)
+* [Docker Hub](https://hub.docker.com/): limited pulls and private repos on free plan
+* [GitHub Container Registry](https://ghcr.io/)
+
+## Containers
+
+* [GitLab Container Registry](https://docs.gitlab.com/ee/user/packages/container_registry/)
+* [Google Artifact Registry](https://cloud.google.com/artifact-registry): small free storage allowance
+* [Amazon ECR](https://aws.amazon.com/ecr/): small free allowance for new accounts
+
+## Development Environments
+
+* [GitHub Codespaces](https://github.com/features/codespaces): monthly free hours
+* [StackBlitz](https://stackblitz.com/)
+* [CodeSandbox](https://codesandbox.io/)
+* [Replit](https://replit.com/): heavily limited free plan
+
+---
+
+# 📱 Mobile
+
+* [Expo](https://expo.dev/): free tier for builds and updates, limited build queue
+* [React Native](https://reactnative.dev/): open source
+* [Flutter](https://flutter.dev/): open source
+* [Firebase](https://firebase.google.com/): Auth, Firestore, FCM, Crashlytics
+* [Supabase](https://supabase.com/): Postgres, Auth, Storage, Realtime
+
+---
+
+# 🎨 Design
+
+* [Figma](https://www.figma.com/): free starter plan
+* [Canva](https://www.canva.com/): free plan
+* [Excalidraw](https://excalidraw.com/): free, open source
+* [Lucide](https://lucide.dev/): open-source icons
+* [Unsplash](https://unsplash.com/): free photos (check license for your use)
+* [Pexels](https://www.pexels.com/): free photos and video
+
+---
+
+# 💳 Payments
+
+| Service | Fees | Notes |
+| ------- | ---- | ----- |
+| [Stripe](https://stripe.com/) | 💰 per transaction | No monthly fee; you are the merchant |
+| [Lemon Squeezy](https://www.lemonsqueezy.com/) | 💰 per transaction | Merchant of record (handles global tax) |
+| [Paddle](https://www.paddle.com/) | 💰 per transaction | Merchant of record |
+| [Creem](https://www.creem.io/) | 💰 per transaction | Merchant of record |
+
+> 💡 "Free" here means no mandatory monthly platform fee, not free transactions. Merchant-of-record services charge more but handle VAT and sales tax for you.
+
+---
+
+# 📣 Marketing & Launch
+
+* [Product Hunt](https://www.producthunt.com/)
+* [Indie Hackers](https://www.indiehackers.com/)
+* [Reddit](https://www.reddit.com/)
+* [X](https://x.com/)
+* [LinkedIn](https://www.linkedin.com/)
+* [Beehiiv](https://www.beehiiv.com/): newsletters, free up to a subscriber cap
+* [Kit (ConvertKit)](https://kit.com/): newsletters, free up to a subscriber cap
+
+---
+
+# 📨 Forms & Feedback
+
+* [Tally](https://tally.so/): generous free plan
+* [Google Forms](https://forms.google.com/)
+* [Microsoft Forms](https://forms.office.com/)
+* [Formspree](https://formspree.io/): small monthly submission cap
+* [Typeform](https://www.typeform.com/): very limited free plan
+
+---
+
+# 🔄 Automation
+
+* [n8n](https://n8n.io/): 🏠 free if self-hosted, paid cloud
+* [Make](https://www.make.com/): free plan with monthly operation cap
+* [Zapier](https://zapier.com/): very limited free plan
+* [Pipedream](https://pipedream.com/): free credits for workflows
+* [GitHub Actions](https://github.com/features/actions): scheduled workflows are a free cron
+
+---
+
+# 🏠 Self-Host Only (Free Software, Not Free Hosting)
+
+These cost $0 to download but need a server. A small VPS or a home server typically costs a few dollars a month.
+
+| Project | Replaces | Notes |
+| ------- | -------- | ----- |
+| [Meilisearch](https://www.meilisearch.com/) | Algolia | Fast, simple search |
+| [Typesense](https://typesense.org/) | Algolia | Typo-tolerant search |
+| [OpenSearch](https://opensearch.org/) | Elasticsearch | Heavy on RAM |
+| [GlitchTip](https://glitchtip.com/) | Sentry | Sentry-SDK compatible |
+| [SigNoz](https://signoz.io/) | Datadog / Sentry | OpenTelemetry-native |
+| [Plausible](https://plausible.io/) | Google Analytics | Hosted version is paid |
+| [Umami](https://umami.is/) | Google Analytics | Hosted free tier also exists |
+| [RabbitMQ](https://www.rabbitmq.com/) | Cloud queues | Message broker |
+| [Valkey](https://valkey.io/) | Redis | Open-source Redis fork |
+| [n8n](https://n8n.io/) | Zapier | Workflow automation |
+| [Appwrite](https://appwrite.io/) | Firebase | Backend-as-a-service |
+
+---
+
+# 🆚 Free Alternatives
+
+| Popular | Free Alternatives |
+| ------- | ----------------- |
+| Vercel | Cloudflare Pages, Netlify |
+| Supabase | Neon, Firebase, Appwrite (self-host) |
+| Firebase | Supabase, Appwrite |
+| Redis | Upstash, Valkey (self-host) |
+| Sentry | GlitchTip, SigNoz (self-host) |
+| Algolia | Meilisearch, Typesense (self-host) |
+| AWS | Cloudflare, Render, Koyeb |
+| Stripe | Lemon Squeezy, Paddle, Creem (merchant of record) |
+| Heroku | Render, Koyeb, Railway (credits) |
+| OpenAI API | Gemini, Groq, Cerebras, Mistral |
+| Google Analytics | PostHog, Umami, Cloudflare Web Analytics |
+
+---
+
+# 💰 $0 Startup Checklist
+
+```text
+☐ Domain (~$10/year, not free)
+☐ DNS / CDN
+☐ Frontend
+☐ Backend
+☐ Database
+☐ Authentication
+☐ File storage
+☐ Email
+☐ Analytics
+☐ Error tracking
+☐ Uptime monitoring
+☐ Payments
+☐ CI/CD
+☐ AI (if needed)
+```
+
+Start with free tiers. Upgrade only when a real limit blocks you.
+
+---
+
+# ⚠️ Free Doesn't Mean Unlimited
+
+Before picking a service, check:
+
+* Request, CPU, and memory limits
+* Storage, bandwidth, and database size
+* Concurrent connections (the usual surprise with serverless + Postgres)
+* Build minutes and API rate limits
+* Sleep behavior and cold starts
+* Data retention and backups
+* Credit card requirement
+* **Commercial-use restrictions** (e.g. Vercel Hobby)
+* Geographic availability
+* Free-tier expiration
+
+A service can be free and still be a bad choice for production.
+
+---
+
+# 🔄 How This List Stays Accurate
+
+Every row carries a **Verified** column:
+
+* ⏳ means not yet re-verified. Treat limits as approximate.
+* A date (`2026-10-08`) means the pricing page was checked on that day.
+
+Outdated free tier? [Open an issue](https://github.com/dereknguyen269/free-services/issues) or submit a PR.
+
+---
+
+# 🤝 Contributing
+
+Adding a service? It should have:
+
+1. A genuinely useful free tier
+2. Publicly documented pricing and limits
+3. A currently active free plan
+4. Something distinct from existing entries
+
+Please include: service, category, URL, free-tier limits, card required, free forever / credits / trial, commercial use allowed, sleep or expiry behavior, and last verified date.
+
+Services that are free for only a few days, without meaningful credits, will not be accepted.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full template and [ROADMAP.md](ROADMAP.md) for what is planned (standardized metadata, `services.yaml` as the source of truth, automated pricing-page monitoring, and a searchable website).
+
+---
+
+# ⭐ Support
+
+If this saved you money, **give it a ⭐ on GitHub**. Know a great free service that's missing? Open a PR.
+
+---
+
+## 📚 Related
+
+* [free-for-dev](https://github.com/ripienaar/free-for-dev): the broad, community-maintained catalog
+* [Awesome Selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)
+* [Public APIs](https://github.com/public-apis/public-apis)
 
 ---
 
 ## 📄 License
 
-MIT - Free to use and modify
+See [LICENSE](LICENSE) for details.
+
+---
+
+<p align="center">
+  <strong>Build more. Pay less. Ship faster. 🚀</strong>
+</p>
