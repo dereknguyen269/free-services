@@ -3,6 +3,7 @@
 Planned improvements for this list:
 
 - [ ] Standardized metadata for every service (limits, card, type, commercial use, sleep/expiry, verified date)
-- [ ] `services.yaml` as the source of truth, with README generated from it
+- [x] `services.yaml` as the source of truth (`data/services.yaml`, 7 stacks / 20 categories)
+- [ ] README generated from `services.yaml` (currently mirrored by hand)
 - [ ] Automated pricing-page monitoring to flag stale rows
-- [ ] Searchable website for browsing by stack and category
+- [x] Searchable website for browsing by stack and category (`site/`, GitHub Pages via Actions)

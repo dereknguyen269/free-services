@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free Services for Developers — Build for $0</title>
+<meta name="description" content="Opinionated $0 stacks, real free-tier limits, and where you hit the wall. Search 140+ free services for developers." />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">🚀 Free Services for Developers</p>
+    <h1>Build and ship your next app for <span class="hl">$0</span></h1>
+    <p class="sub">Opinionated stacks you can copy · real limits, not just a “free” badge · know exactly <em>where you hit the wall</em>.</p>
+    <div class="hero-actions">
+      <input id="q" type="search" placeholder="Search services… (e.g. postgres, resend, vector)" autocomplete="off" aria-label="Search services" />
+      <select id="badgeFilter" aria-label="Filter by badge">
+        <option value="">All badges</option>
+        <option value="🟢">🟢 Free forever</option>
+        <option value="🔵">🔵 Free credits</option>
+        <option value="🟡">🟡 Free trial</option>
+        <option value="💳">💳 Card required</option>
+        <option value="😴">😴 Sleeps / pauses</option>
+        <option value="⚡">⚡ Usage limits</option>
+        <option value="🏠">🏠 Self-hostable</option>
+      </select>
+      <select id="catFilter" aria-label="Filter by category"><option value="">All categories</option></select>
+    </div>
+    <p class="warn">⚠️ Free tiers change constantly. Rows marked ⏳ have not been re-verified. Always check the provider’s pricing page before production.</p>
+    <p class="counts"><span id="count"></span></p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="stacks">
+    <h2>🏆 $0 Stacks</h2>
+    <p class="muted">Pick what you’re building. Each stack is a starting point — real cost depends on traffic, storage, compute, and API usage.</p>
+    <div id="stackTabs" class="tabs" role="tablist"></div>
+    <article id="stackDetail" class="card"></article>
+  </section>
+
+  <section id="legend">
+    <h2>🏷️ Legend</h2>
+    <div id="legendGrid" class="legend"></div>
+    <p class="muted"><strong>“Free” ≠ “free software.”</strong> A hosted free tier costs you nothing. A self-hostable project is free to download, but you pay for the server (<a href="#cat-selfhost">self-host list</a>).</p>
+  </section>
+
+  <section id="catalog">
+    <h2>📚 Catalog</h2>
+    <div id="categories"></div>
+  </section>
+
+  <section id="extras" class="grid2">
+    <div class="card">
+      <h2>🆚 Free Alternatives</h2>
+      <div id="alternatives"></div>
+    </div>
+    <div class="card">
+      <h2>💰 $0 Startup Checklist</h2>
+      <ul id="checklist" class="check"></ul>
+      <h2>⚠️ Before you pick</h2>
+      <ul class="tight">
+        <li>Request, CPU, memory limits</li>
+        <li>Storage, bandwidth, DB size</li>
+        <li>Concurrent connections (serverless + Postgres surprise)</li>
+        <li>Sleep behavior &amp; cold starts</li>
+        <li>Card requirement &amp; commercial-use restrictions</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Data: <code>data/services.yaml</code> · <a href="https://github.com/dereknguyen269/free-services">GitHub repo</a> · <a href="https://github.com/dereknguyen269/free-services/issues">Report outdated tier</a></p>
+    <p><strong>Build more. Pay less. Ship faster. 🚀</strong></p>
+  </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
