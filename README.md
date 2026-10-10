@@ -170,6 +170,7 @@ Many paid tools offer free plans for open source projects. Always check each ven
 | [Google Cloud Run](https://cloud.google.com/run) | Containers | 🟢⚡💳 | Monthly free request and compute allowance | 💳 | ⏳ |
 | [Railway](https://railway.com/) | Cloud | 🔵 | Trial credits, then paid | 💳 | ⏳ |
 | [Fly.io](https://fly.io/) | Cloud | 🔵 | Pay-as-you-go for new accounts, no standing free plan | 💳 | ⏳ |
+| [Prisma Compute](https://www.prisma.io/compute) | TypeScript apps | 🟢⚡ | 1M requests/month; Node.js, Bun and Next.js next to Prisma Postgres; scales to zero when idle | ❌ | 2026-10-08 |
 
 ---
 
@@ -179,6 +180,7 @@ Many paid tools offer free plans for open source projects. Always check each ven
 | ------- | ------ | ---- | ------------------- | ----- | -------- |
 | [Supabase](https://supabase.com/) | PostgreSQL | 🟢😴 | ~500 MB DB, limited active projects | Pauses after about a week idle | ⏳ |
 | [Neon](https://neon.tech/) | PostgreSQL | 🟢😴 | ~0.5 GB per project | Scales to zero, cold start on first query | ⏳ |
+| [Prisma Postgres](https://www.prisma.io/postgres) | PostgreSQL | 🟢⚡ | 1.01 GB storage, 200k operations/month, up to 50 databases | Zero cold starts; no credit card | 2026-10-08 |
 | [Aiven](https://aiven.io/) | PostgreSQL / MySQL / Valkey | 🟢⚡ | Single small node | Good for learning | ⏳ |
 | [CockroachDB](https://www.cockroachlabs.com/) | Distributed SQL | 🟢⚡ | Free Basic tier with monthly usage allowance | Postgres-compatible | ⏳ |
 | [Nile](https://www.thenile.dev/) | PostgreSQL | 🟢⚡ | Free tier for multi-tenant apps | Tenant-aware Postgres | ⏳ |
