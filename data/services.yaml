@@ -301,6 +301,7 @@ categories:
       - { name: "Flutter", url: "https://flutter.dev/", limits: "open source" }
       - { name: "Firebase", url: "https://firebase.google.com/", limits: "Auth, Firestore, FCM, Crashlytics" }
       - { name: "Supabase", url: "https://supabase.com/", limits: "Postgres, Auth, Storage, Realtime" }
+      - { name: "APPLORE App Icon Generator", url: "https://applore.app/app-icon-generator", limits: "free quick export of iOS, Android adaptive and web icon sizes, no account" }
   - id: design
     emoji: "🎨"
     name: "Design"

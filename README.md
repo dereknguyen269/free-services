@@ -416,6 +416,7 @@ Many paid tools offer free plans for open source projects. Always check each ven
 * [Flutter](https://flutter.dev/): open source
 * [Firebase](https://firebase.google.com/): Auth, Firestore, FCM, Crashlytics
 * [Supabase](https://supabase.com/): Postgres, Auth, Storage, Realtime
+* [APPLORE App Icon Generator](https://applore.app/app-icon-generator): free quick export of iOS, Android adaptive and web icon sizes, no account
 
 ---
 
