@@ -229,6 +229,7 @@ categories:
       - { name: "Grafana Cloud", url: "https://grafana.com/", free: "🟢⚡", limits: "Metrics, logs, traces allowance", notes: "Good all-in-one observability", verified: "⏳" }
       - { name: "Telemetry Tracker", url: "https://telemetry-tracker.com/", free: "🟢⚡", limits: "250K ingest units/month, 14-day retention, 1 project", notes: "Error tracking for JS/TS apps; no card; MIT, self-hostable", verified: "2026-10-14" }
       - { name: "SolidPing", url: "https://www.solidping.io/", free: "🟢⚡🏠", limits: "100 monitors, 10 check runs/min, 5 members", notes: "Uptime checks, status pages, on-call. AGPL, self-hostable", verified: "2026-10-13" }
+      - { name: "NoCert", url: "https://nocert.io/pricing", free: "🟢⚡", limits: "50 active certificates, 2 Sentinel agents, 1 user", notes: "Public/internal TLS monitoring; no card; professional use only; no plan expiry or deletion at trial end; excess agents pause after 30 days", verified: "2026-11-06" }
   - id: search
     emoji: "🔍"
     name: "Search"
