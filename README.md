@@ -418,6 +418,7 @@ Many paid tools offer free plans for open source projects. Always check each ven
 * [Firebase](https://firebase.google.com/): Auth, Firestore, FCM, Crashlytics
 * [Supabase](https://supabase.com/): Postgres, Auth, Storage, Realtime
 * [APPLORE App Icon Generator](https://applore.app/app-icon-generator): free quick export of iOS, Android adaptive and web icon sizes, no account
+* [AppScreen](https://appscreen.pro/): free App Store and Google Play screenshot maker that runs in the browser, with iPhone and Android phone frames, 3 projects, no account
 
 ---
 
