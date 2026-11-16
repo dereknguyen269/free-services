@@ -303,6 +303,7 @@ categories:
       - { name: "Firebase", url: "https://firebase.google.com/", limits: "Auth, Firestore, FCM, Crashlytics" }
       - { name: "Supabase", url: "https://supabase.com/", limits: "Postgres, Auth, Storage, Realtime" }
       - { name: "APPLORE App Icon Generator", url: "https://applore.app/app-icon-generator", limits: "free quick export of iOS, Android adaptive and web icon sizes, no account" }
+      - { name: "AppScreen", url: "https://appscreen.pro/", limits: "free App Store and Google Play screenshot maker that runs in the browser, with iPhone and Android phone frames, 3 projects, no account" }
   - id: design
     emoji: "🎨"
     name: "Design"
