@@ -288,6 +288,7 @@ Many paid tools offer free plans for open source projects. Always check each ven
 
 * [Deepgram](https://deepgram.com/): free credits
 * [ElevenLabs](https://elevenlabs.io/): small monthly free allowance
+* [GetYouTubeTranscript](https://getyoutubetranscript.com/): YouTube video transcripts, a few per day free on the web, 100 free API credits on sign-up
 * [Whisper](https://github.com/openai/whisper): open-source model, 🏠 you supply the compute
 
 ## 🎨 Image Generation

@@ -205,6 +205,7 @@ categories:
         services:
           - { name: "Deepgram", url: "https://deepgram.com/", limits: "free credits", verified: "⏳" }
           - { name: "ElevenLabs", url: "https://elevenlabs.io/", limits: "small monthly free allowance", verified: "⏳" }
+          - { name: "GetYouTubeTranscript", url: "https://getyoutubetranscript.com/", limits: "YouTube video transcripts: a few per day on the web without an account; 100 free API credits on sign-up, no card", verified: "2026-11-15" }
           - { name: "Whisper", url: "https://github.com/openai/whisper", limits: "open-source model, you supply the compute", verified: "⏳" }
       - name: "Image Generation"
         services:
