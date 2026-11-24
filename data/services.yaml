@@ -353,6 +353,7 @@ categories:
       - { name: "Zapier", url: "https://zapier.com/", limits: "very limited free plan" }
       - { name: "Pipedream", url: "https://pipedream.com/", limits: "free credits for workflows" }
       - { name: "GitHub Actions", url: "https://github.com/features/actions", limits: "scheduled workflows are a free cron" }
+      - { name: "Cloudbrowser", url: "https://cloudbrowser.tv/", type: "Hosted Chrome / CDP", free: "🟢⚡😴", limits: "1 browser-hour per UTC calendar month, one running browser, verified email required", notes: "Pauses at the quota limit. Optional auto-pause defaults to 5 minutes without a CDP or desktop connection. Resume restarts Chrome with the saved profile. Free-plan commercial use is not specified.", card: false, verified: "2026-11-24" }
   - id: selfhost
     emoji: "🏠"
     name: "Self-Host Only (Free Software, Not Free Hosting)"
