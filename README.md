@@ -33,6 +33,13 @@
 > ⚠️ Free tiers change constantly. Rows marked ⏳ have not been re-verified recently. Always check the provider's pricing page before relying on a service in production.
 
 > 🌐 **Prefer browsing?** Use the [interactive searchable catalog](https://dereknguyen269.github.io/free-services/) backed by [`data/services.yaml`](data/services.yaml).
+>
+> 🤖 **Using an agent?** Point it to [`skills/free-services/SKILL.md`](skills/free-services/SKILL.md) to shortlist $0 services without treating stale quotas as verified. Install by copying `skills/free-services/` into your agent's skills directory, or supply the file as context; the agent must also have access to `data/services.yaml` and the web for current terms.
+
+```bash
+git clone https://github.com/dereknguyen269/free-services.git
+# In the cloned repo, ask your agent: "Use skills/free-services/SKILL.md to recommend a no-card SaaS stack."
+```
 
 ---
 
