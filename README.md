@@ -483,6 +483,7 @@ Many paid tools offer free plans for open source projects. Always check each ven
 * [Zapier](https://zapier.com/): very limited free plan
 * [Pipedream](https://pipedream.com/): free credits for workflows
 * [GitHub Actions](https://github.com/features/actions): scheduled workflows are a free cron
+* [Cloudbrowser](https://cloudbrowser.tv/) provides hosted Chrome for CDP-based browser automation. The [Free plan](https://cloudbrowser.tv/pricing) includes 1 browser-hour per UTC calendar month and one running browser after email verification, with no card required. The browser pauses at the quota limit or, by default, after 5 minutes without a CDP or desktop connection. [Resume](https://cloudbrowser.tv/docs/browsers) restarts Chrome with the saved profile. The [terms](https://cloudbrowser.tv/legal/terms) do not specify Free-plan commercial use. Verified November 24, 2026.
 
 ---
 
