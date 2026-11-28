@@ -314,6 +314,7 @@ Many paid tools offer free plans for open source projects. Always check each ven
 | [Umami Cloud](https://umami.is/) | 🟢⚡ | Monthly event cap | Privacy-friendly, 🏠 also self-hostable | ⏳ |
 | [Google Analytics](https://analytics.google.com/) | 🟢 | Generous | Privacy and consent obligations apply | ⏳ |
 | [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) | 🟢 | Free | Basic, cookie-less | ⏳ |
+| [Betterloop](https://betterloopai.com/) | 🟢⚡ | 1 project, 10,000 events/month, weekly analysis | No card. Public site check before signup. Commercial use on authorized sites. Raw events kept until project deletion. | 2026-11-27 |
 
 > 🏠 **Moved to self-host:** Plausible (paid hosted, free only if you self-host).
 

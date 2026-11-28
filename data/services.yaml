@@ -220,6 +220,7 @@ categories:
       - { name: "Umami Cloud", url: "https://umami.is/", free: "🟢⚡", limits: "Monthly event cap", notes: "Privacy-friendly, also self-hostable", verified: "⏳" }
       - { name: "Google Analytics", url: "https://analytics.google.com/", free: "🟢", limits: "Generous", notes: "Privacy and consent obligations apply", verified: "⏳" }
       - { name: "Cloudflare Web Analytics", url: "https://www.cloudflare.com/web-analytics/", free: "🟢", limits: "Free", notes: "Basic, cookie-less", verified: "⏳" }
+      - { name: "Betterloop", url: "https://betterloopai.com/", free: "🟢⚡", limits: "1 project, 10,000 events/month, weekly analysis", notes: "No card. Public site check before signup. Commercial use on authorized sites. Raw events kept until project deletion.", card: false, verified: "2026-11-27" }
   - id: monitoring
     emoji: "🐛"
     name: "Monitoring & Error Tracking"
